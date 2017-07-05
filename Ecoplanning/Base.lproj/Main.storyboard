@@ -1031,14 +1031,20 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="message:" target="XfG-lQ-9wD" id="YxI-Ev-ApE"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="m9C-eU-1Tf">
-                                            <rect key="frame" x="855" y="672" width="167" height="32"/>
+                                            <rect key="frame" x="855" y="673" width="167" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="push" title="Sauvegarder Comme" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MSM-H2-37t">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="message2:" target="XfG-lQ-9wD" id="mUh-Dd-ltI"/>
+                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" misplaced="YES" id="XbI-Qu-pSN">
                                             <rect key="frame" x="1022" y="672" width="119" height="32"/>
@@ -1060,7 +1066,7 @@
                                             <rect key="frame" x="17" y="529" width="1202" height="135"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="7N6-4I-u5s">
-                                                <rect key="frame" x="1" y="23" width="1200" height="111"/>
+                                                <rect key="frame" x="1" y="0.0" width="1200" height="134"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="a0r-Ir-UKM" viewBased="YES" id="DD2-bY-rhe">
@@ -1220,7 +1226,7 @@
                                             <rect key="frame" x="17" y="361" width="564" height="135"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" id="3SU-mT-H9m">
-                                                <rect key="frame" x="1" y="23" width="562" height="111"/>
+                                                <rect key="frame" x="1" y="0.0" width="562" height="134"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="Emn-eb-03C" viewBased="YES" id="XyO-W7-p07">
@@ -1506,7 +1512,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2306" y="390"/>
+            <point key="canvasLocation" x="2305.5" y="389.5"/>
         </scene>
     </scenes>
 </document>

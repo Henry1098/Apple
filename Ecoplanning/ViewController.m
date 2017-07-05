@@ -20,8 +20,17 @@
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
-    // Update the view, if already loaded.
+    // Update the view, isf already loaded.
 }
 
+- (IBAction)message:(id)sender {
+NSString *str = @"Hello World";
+    NSAlert *alert = [[NSAlert alloc]init];
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:@"Gelloe"];
+}
+
+- (IBAction)message2:(id)sender {
+}
 
 @end
