@@ -27,10 +27,15 @@
 NSString *str = @"Hello World";
     NSAlert *alert = [[NSAlert alloc]init];
     [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:@"Gelloe"];
+    [alert setMessageText:@"Ecoplanning fonctionne correctement"];
+    [alert runModal];
 }
 
 - (IBAction)message2:(id)sender {
+    
+}
+- (IBAction)message3:(id)sender {
+    
 }
 
 @end

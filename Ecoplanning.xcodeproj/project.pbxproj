@@ -14,6 +14,7 @@
 		6B66CFE81F0D29310017B9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B66CFE61F0D29310017B9B9 /* Main.storyboard */; };
 		6B66CFF31F0D29310017B9B9 /* EcoplanningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFF21F0D29310017B9B9 /* EcoplanningTests.m */; };
 		6B66CFFE1F0D29310017B9B9 /* EcoplanningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFFD1F0D29310017B9B9 /* EcoplanningUITests.m */; };
+		6BEE20121F0F98E100A8E87E /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE20111F0F98E100A8E87E /* Globals.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		6B66CFF91F0D29310017B9B9 /* EcoplanningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoplanningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B66CFFD1F0D29310017B9B9 /* EcoplanningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EcoplanningUITests.m; sourceTree = "<group>"; };
 		6B66CFFF1F0D29310017B9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BEE20101F0F98E100A8E87E /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		6BEE20111F0F98E100A8E87E /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				6B66CFE21F0D29310017B9B9 /* ViewController.m */,
 				6B66CFE41F0D29310017B9B9 /* Assets.xcassets */,
 				6B66CFE61F0D29310017B9B9 /* Main.storyboard */,
+				6BEE20101F0F98E100A8E87E /* Globals.h */,
+				6BEE20111F0F98E100A8E87E /* Globals.m */,
 				6B66CFE91F0D29310017B9B9 /* Info.plist */,
 				6B66CFDE1F0D29310017B9B9 /* Supporting Files */,
 			);
@@ -269,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BEE20121F0F98E100A8E87E /* Globals.m in Sources */,
 				6B66CFE31F0D29310017B9B9 /* ViewController.m in Sources */,
 				6B66CFE01F0D29310017B9B9 /* main.m in Sources */,
 				6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */,
@@ -500,6 +506,7 @@
 				6B66D0041F0D29310017B9B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B66D0051F0D29310017B9B9 /* Build configuration list for PBXNativeTarget "EcoplanningTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +515,7 @@
 				6B66D0071F0D29310017B9B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B66D0081F0D29310017B9B9 /* Build configuration list for PBXNativeTarget "EcoplanningUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +524,7 @@
 				6B66D00A1F0D29310017B9B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
