@@ -15,6 +15,7 @@
 		6B66CFF31F0D29310017B9B9 /* EcoplanningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFF21F0D29310017B9B9 /* EcoplanningTests.m */; };
 		6B66CFFE1F0D29310017B9B9 /* EcoplanningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFFD1F0D29310017B9B9 /* EcoplanningUITests.m */; };
 		6BEE20121F0F98E100A8E87E /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE20111F0F98E100A8E87E /* Globals.m */; };
+		6BEE20231F0FD47300A8E87E /* StartProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE20221F0FD47300A8E87E /* StartProject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		6B66CFFF1F0D29310017B9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BEE20101F0F98E100A8E87E /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		6BEE20111F0F98E100A8E87E /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
+		6BEE20211F0FD47300A8E87E /* StartProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartProject.h; path = ../StartProject.h; sourceTree = "<group>"; };
+		6BEE20221F0FD47300A8E87E /* StartProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartProject.m; path = ../StartProject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */,
 				6B66CFE11F0D29310017B9B9 /* ViewController.h */,
 				6B66CFE21F0D29310017B9B9 /* ViewController.m */,
+				6BEE20211F0FD47300A8E87E /* StartProject.h */,
+				6BEE20221F0FD47300A8E87E /* StartProject.m */,
 				6B66CFE41F0D29310017B9B9 /* Assets.xcassets */,
 				6B66CFE61F0D29310017B9B9 /* Main.storyboard */,
 				6BEE20101F0F98E100A8E87E /* Globals.h */,
@@ -276,6 +281,7 @@
 			files = (
 				6BEE20121F0F98E100A8E87E /* Globals.m in Sources */,
 				6B66CFE31F0D29310017B9B9 /* ViewController.m in Sources */,
+				6BEE20231F0FD47300A8E87E /* StartProject.m in Sources */,
 				6B66CFE01F0D29310017B9B9 /* main.m in Sources */,
 				6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */,
 			);

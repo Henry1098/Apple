@@ -62,8 +62,7 @@
                                     <items>
                                         <menuItem title="Nouveau Projet" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="startNewProject:" target="Voe-Tx-rLC" id="2gW-9J-271"/>
-                                                <segue destination="aXT-vO-Ojg" kind="show" id="l7H-1v-FeI"/>
+                                                <segue destination="eq9-Jr-PpN" kind="show" id="s4L-t4-jAK"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Ouvrir Projet" keyEquivalent="o" id="IAo-SY-fd9">
@@ -134,12 +133,7 @@
                                                 <action selector="startNewProject:" target="Voe-Tx-rLC" id="Vd4-7J-OUe"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Date de début du projet" keyEquivalent="o" id="oGZ-9R-QmM">
-                                            <connections>
-                                                <action selector="openDocument:" target="Ady-hI-5gd" id="OKI-ad-grh"/>
-                                                <segue destination="Vf6-q2-Gf9" kind="show" id="Lfp-bu-BWS"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Date de début du projet" keyEquivalent="o" id="oGZ-9R-QmM"/>
                                         <menuItem title="Calendrier" id="CXn-AZ-7jO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
@@ -930,10 +924,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--ChangeDate-->
         <scene sceneID="wHZ-XT-eSX">
             <objects>
-                <viewController id="Vf6-q2-Gf9" sceneMemberID="viewController">
+                <viewController id="Vf6-q2-Gf9" userLabel="ChangeDate" sceneMemberID="viewController">
                     <view key="view" id="JbC-Oq-wl2">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -941,10 +935,10 @@
                             <datePicker verticalHuggingPriority="750" misplaced="YES" id="5dL-uo-A7t">
                                 <rect key="frame" x="52" y="132" width="139" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerStyle="clockAndCalendar" id="pUI-AQ-Pp2">
+                                <datePickerCell key="cell" state="on" borderStyle="bezel" alignment="left" datePickerStyle="clockAndCalendar" id="pUI-AQ-Pp2">
                                     <font key="font" metaFont="system"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
-                                        <!--1982-02-12 16:00:00 +0000-->
+                                    <date key="date" timeIntervalSinceReferenceDate="-596620800">
+                                        <!--1982-02-04 16:00:00 +0000-->
                                     </date>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1002,86 +996,107 @@ DQ
             </objects>
             <point key="canvasLocation" x="-1834" y="342"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="da3-gj-x6O">
+        <!--Startproject-->
+        <scene sceneID="Ls7-Ag-bbL">
             <objects>
-                <viewController id="aXT-vO-Ojg" sceneMemberID="viewController">
-                    <view key="view" misplaced="YES" id="CVZ-Bg-5xk">
-                        <rect key="frame" x="0.0" y="0.0" width="672" height="510"/>
+                <viewController id="eq9-Jr-PpN" userLabel="Startproject" customClass="StartProject" sceneMemberID="viewController">
+                    <view key="view" misplaced="YES" id="TBB-Re-m4E">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="502"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="nna-b9-6rH">
-                                <rect key="frame" x="18" y="480" width="157" height="17"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="POW-hw-VAY">
+                                <rect key="frame" x="9" y="477" width="157" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Date : Début Prévisionnel" id="kI7-3e-2vt">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Date : Début Prévisionnel" id="nXt-FT-WXB">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" red="1" green="0.20163256105169947" blue="0.10119337486808488" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" red="0.94972474093264247" green="0.073955155694792218" blue="0.0067668486463207354" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="vai-Zo-TMp">
-                                <rect key="frame" x="48" y="455" width="96" height="22"/>
+                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="Zi0-yd-Zif">
+                                <rect key="frame" x="39" y="454" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="NVr-57-Kh3">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="upy-Pl-1Wg">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="huB-tw-5bP">
-                                <rect key="frame" x="27" y="258" width="195" height="22"/>
+                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="Xrv-fW-f1Y">
+                                <rect key="frame" x="23" y="259" width="96" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Ykj-Vu-VuH">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="fCy-kj-Fqx">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="Ps9-h2-t2L">
-                                <rect key="frame" x="27" y="97" width="596" height="100"/>
+                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="zgs-ZH-E6t">
+                                <rect key="frame" x="23" y="218" width="340" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="qmM-Ug-fQc">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="wFv-tR-Kmr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <pathControl verticalHuggingPriority="750" misplaced="YES" allowsExpansionToolTips="YES" id="HJk-qs-j8K">
-                                <rect key="frame" x="337" y="432" width="208" height="22"/>
+                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="LJD-Sm-oYR">
+                                <rect key="frame" x="23" y="71" width="340" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <pathCell key="cell" selectable="YES" editable="YES" alignment="left" id="05O-w7-XB3">
-                                    <font key="font" metaFont="system"/>
-                                    <url key="url" string="file:///"/>
-                                    <color key="backgroundColor" red="0.89803921568627454" green="0.92549019607843142" blue="0.97254901960784312" alpha="1" colorSpace="deviceRGB"/>
-                                </pathCell>
-                            </pathControl>
-                            <textField verticalHuggingPriority="750" misplaced="YES" allowsCharacterPickerTouchBarItem="NO" id="Eb0-Og-dfA">
-                                <rect key="frame" x="27" y="218" width="385" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="dL0-9d-JCk">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="0Po-Yv-GRI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <datePicker verticalHuggingPriority="750" misplaced="YES" id="z9K-XD-CE9">
-                                <rect key="frame" x="27" y="299" width="139" height="148"/>
+                            <button verticalHuggingPriority="750" misplaced="YES" id="D1h-Tf-xIe">
+                                <rect key="frame" x="314" y="448" width="87" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <datePickerCell key="cell" state="on" borderStyle="bezel" alignment="left" datePickerStyle="clockAndCalendar" id="EzR-28-8XM">
+                                <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="l6u-bz-7kD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <date key="date" timeIntervalSinceReferenceDate="-595584000">
-                                        <!--1982-02-16 16:00:00 +0000-->
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" misplaced="YES" id="D2a-I8-Cgb">
+                                <rect key="frame" x="314" y="407" width="87" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Annuler" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rgT-k2-BMi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" misplaced="YES" id="LbO-9W-77o">
+                                <rect key="frame" x="314" y="374" width="87" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Aide" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="taI-4L-WhN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <datePicker verticalHuggingPriority="750" misplaced="YES" id="BgK-xB-ZHL">
+                                <rect key="frame" x="18" y="296" width="139" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerStyle="clockAndCalendar" id="jhH-5R-XNd">
+                                    <font key="font" metaFont="system"/>
+                                    <date key="date" timeIntervalSinceReferenceDate="506016000">
+                                        <!--2017-01-13 16:00:00 +0000-->
                                     </date>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </datePickerCell>
+                                <connections>
+                                    <action selector="onDataClick:" target="eq9-Jr-PpN" id="6O6-NF-zkK"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                     </view>
                 </viewController>
-                <customObject id="OAy-XX-RLs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="1aW-yC-Hrr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="1373"/>
+            <point key="canvasLocation" x="-979" y="1535"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
