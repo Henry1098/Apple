@@ -18,18 +18,8 @@
     [super viewDidLoad];
     // Do view setup here.
 }
-- (IBAction)onDataClick:(id)sender {
-    NSDatePicker *picker = [[NSDatePicker alloc]init];
-    NSDate * date = picker.dateValue;
-    NSTextField *txt = [[NSTextField alloc]init];
-    NSDateFormatter *format = [[NSDateFormatter alloc]init];
-    [format setDateFormat:@"dd/mm/yy"];
-    NSString *strDate = [format stringFromDate:date];
-    
-    
-    
-    txt.stringValue = strDate;
-    
+
+- (IBAction)onDateClick:(id)sender {
 }
 
 @end

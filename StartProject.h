@@ -7,7 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
 @interface StartProject : NSViewController
-
+{
+    NSDatePicker *picker;
+    NSTextField *txt;
+}
 @end
