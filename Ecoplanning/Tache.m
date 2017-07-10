@@ -16,11 +16,7 @@
 Tache *tache;
 Globals *globals;
 
--(id) init{
-    globals = [[Globals alloc]init];
-    
-    self = [super init];
-    if(self){
+-(void) initialization{
         numero = 1;
         designation =@"Tache 1";
         duree = 1;
@@ -31,9 +27,7 @@ Globals *globals;
         marge = 1;
         cal = 1;
   
-    }
-    return self;
-    
+
 }
 
 @synthesize numero,duree, marge, cout, coutR;

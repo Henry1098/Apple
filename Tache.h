@@ -52,7 +52,7 @@
     
     
 }
--(id) init;
+-(void) initialization;
 
 
 @property int numero,duree, marge, cout, coutR;
