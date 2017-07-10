@@ -52,11 +52,7 @@
     
     
 }
-
--(NSDate *)calcdate:(NSDate *) datedebut : (int) jours;
--(BOOL)isWeekDay:(NSDate*) date;
--(NSDate*)verifjourdelasemaine:(NSDate *) date2;
--(NSDate*)ajouterjours:(NSDate *) date :(NSInteger) jours;
+-(id) init;
 
 
 @property int numero,duree, marge, cout, coutR;

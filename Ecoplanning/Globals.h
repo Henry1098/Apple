@@ -21,6 +21,9 @@
 @property NSString *codeProjet, *titreProjet, *Observations;
 
 -(void)changementDateDebut:(NSDate*) datedeb;
-
+-(BOOL)isWeekDay:(NSDate*) date;
+-(NSDate*)verifjourdelasemaine:(NSDate *) date2;
+-(NSDate*)ajouterjours:(NSDate *) date :(NSInteger) jours;
+-(NSDate *)calcdate:(NSDate *) datedebut : (int) jours;
 
 @end

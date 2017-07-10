@@ -8,69 +8,32 @@
 
 #import <Foundation/Foundation.h>
 #import "Tache.h"
+#import "Globals.h"
 
 
 @implementation Tache
 
 Tache *tache;
+Globals *globals;
 
--(BOOL)isWeekDay:(NSDate*) date{
-     NSInteger semaine;
-    NSCalendar *calendrier;
-    NSDateComponents *comp = [calendrier components:NSCalendarUnitWeekday fromDate:date];
-    semaine = [comp weekday];
+-(id) init{
+    globals = [[Globals alloc]init];
     
-    const int Samedi = 7;
-    const int Dimanche = 1;
-    
-    BOOL isWeekdayResult = semaine != Dimanche && semaine != Samedi;
-    return isWeekdayResult;
-}
-
-
-
--(NSDate*)verifjourdelasemaine:(NSDate *) date2{
-    NSInteger number = 1;    while(isWeekDay(date2))
-    {
-        date2 = [tache ajouterjours:date2:1];
+    self = [super init];
+    if(self){
+        numero = 1;
+        designation =@"Tache 1";
+        duree = 1;
+        datedeb = globals.datedebutProjet;
+        datefin = [globals calcdate:globals.datedebutProjet :1];
+        datedeb2 = globals.datedebutProjet;;
+        datefin2 = [globals calcdate:globals.datedebutProjet :1];
+        marge = 1;
+        cal = 1;
+  
     }
-    return date2;
+    return self;
     
-}
-
--(NSDate*)ajouterjours:(NSDate *) date :(NSInteger) jours
-{
-   
-    NSDateComponents *components = [[NSDateComponents alloc]init];
-    [components setDay:jours];
-    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDate *resultat = [gregorian dateByAddingComponents:components toDate:date options:0];
-    
-    return resultat;
-
-    
-}
--(NSDate *)calcdate:(NSDate *) datedebut : (int) jours{
-    
-    NSDate * end = datedebut;
-    
-    if(jours == 1){
-        return datedebut;}else{
-            for (int i = 0; i < jours; i++)
-            {
-                end = [tache verifjourdelasemaine:end];
-                
-                end = [tache ajouterjours:end:1];
-                
-            }
-            
-            
-            
-            
-            
-               }
-    
-    return datedebut;
 }
 
 @synthesize numero,duree, marge, cout, coutR;
