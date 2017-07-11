@@ -12,15 +12,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [_arrayController addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil]];
 
-    // Do any additional setup after loading the view.
-}
+    }
 
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
-    // Update the view, isf already loaded.
 }
 
 - (IBAction)message:(id)sender {
@@ -31,13 +31,24 @@ NSString *str = @"Hello World";
     [alert runModal];
 }
 
-- (IBAction)message2:(id)sender {
+-(void)keyDown:(NSEvent *)event
+{
+    static int i = 2;
+    NSString * str = [NSString stringWithFormat:@"%i", i];
+    NSMutableString *str2 = [NSMutableString string];
+    [str2 appendString:@"Tâche "];
+    [str2 appendString:str];
+    if([event keyCode] == 0x22)
+    {
+        [_arrayController addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil]];
+        
     
-}
-- (IBAction)message3:(id)sender {
+    }
     
+    i++;
 }
-
-
+-(BOOL)acceptsFirstResponder{
+    return YES;
+}
 
 @end

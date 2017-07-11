@@ -8,8 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController{
+    
+    
+}
 //@property (weak) IBOutlet Ordonnancement *tableView;
+@property (assign) IBOutlet NSArrayController *arrayController;
 
 
 @end

@@ -9,7 +9,7 @@
 #import "Ordonnancement.h"
 
 @implementation Ordonnancement
-
+/*
 -(BOOL)acceptsFirstResponder{
     return YES;
 }
@@ -26,5 +26,5 @@
         [alert setMessageText:@"Vous avez appuyé sur commande et entrée, une tache va être insérée"];
         [alert runModal];
     }
-}
+}*/
 @end

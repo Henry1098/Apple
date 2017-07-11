@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Ordonnancement : NSScrollView
--(BOOL) acceptsFirstResponder;
+//-(BOOL) acceptsFirstResponder;
 @end
