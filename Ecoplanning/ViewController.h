@@ -10,6 +10,8 @@
 
 @interface ViewController : NSViewController{
     
+    IBOutlet NSButtonCell *check;
+    IBOutlet NSTableView *tableView;
     
 }
 //@property (weak) IBOutlet Ordonnancement *tableView;

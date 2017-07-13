@@ -23,9 +23,20 @@
 
 }
 
-- (IBAction)message:(id)sender {
-NSString *str = @"Hello World";
+- (IBAction)check:(NSButtonCell *)sender {
+    NSInteger selected = [tableView selectedRow];
+    NSString *str;
+    str = [[NSString alloc]initWithFormat:@"%d",(int) selected];
+    
     NSAlert *alert = [[NSAlert alloc]init];
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:str];
+    [alert runModal];
+
+
+}
+
+- (IBAction)message:(id)sender {    NSAlert *alert = [[NSAlert alloc]init];
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:@"Ecoplanning fonctionne correctement"];
     [alert runModal];
@@ -41,7 +52,7 @@ NSString *str = @"Hello World";
     if([event keyCode] == 0x22)
     {
         [_arrayController addObject:[NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil]];
-        
+        [check setTag:i];
     
     }
     
