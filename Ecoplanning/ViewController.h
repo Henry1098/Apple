@@ -12,6 +12,7 @@
     
     IBOutlet NSButtonCell *check;
     IBOutlet NSTableView *tableView;
+    NSMutableDictionary *dict;
     
 }
 //@property (weak) IBOutlet Ordonnancement *tableView;

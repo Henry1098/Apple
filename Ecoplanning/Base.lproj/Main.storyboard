@@ -1061,7 +1061,7 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="message2:" target="XfG-lQ-9wD" id="mUh-Dd-ltI"/>
+                                                <action selector="bb:" target="XfG-lQ-9wD" id="bwx-Yc-43B"/>
                                             </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XbI-Qu-pSN">
