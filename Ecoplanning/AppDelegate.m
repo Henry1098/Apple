@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NouveauProjet.h"
+#import "Liens.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +27,23 @@
 
 - (IBAction)startNewProject:(id)sender {
    
+}
+
+
+-(IBAction)NouveauProj:(id)sender{
+    if(!projet)
+    {
+        projet = [[NouveauProjet alloc]initWithWindowNibName:@"NouveauProjet"];
+    }
+    [projet showWindow:self];
+}
+
+-(IBAction)Lier:(id)sender{
+    if(!lier)
+    {
+        lier = [[Liens alloc]initWithWindowNibName:@"Lien"];
+    }
+    [lier showWindow:self];
 }
 
 

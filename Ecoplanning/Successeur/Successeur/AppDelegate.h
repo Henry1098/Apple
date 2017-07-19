@@ -1,21 +1,15 @@
 //
 //  AppDelegate.h
-//  Ecoplanning
+//  Successeur
 //
-//  Created by Henry NZINGA on 05/07/2017.
+//  Created by Henry NZINGA on 17/07/2017.
 //  Copyright © 2017 Henry NZINGA. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-@class NouveauProjet;
-@class Liens;
-
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-{
-NouveauProjet *projet;
-Liens *lier;
-}
+
 
 @end
 
