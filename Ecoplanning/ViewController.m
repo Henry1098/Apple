@@ -16,12 +16,31 @@ int nbreTaches;
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
     [_arrayController addObject:dict];
     */
-    cellView = [[NSTextFieldCell alloc]init];
-    [cellView setTarget:self];
-    [cellView setAction:@selector(duree:)];
+    tableView.delegate = self;
+    
 
 
 
+}
+
+- (IBAction)colonnes:(id)sender {
+    if([tableView selectedColumn ]== 4)
+    {
+        NSAlert *alert = [[NSAlert alloc]init];
+        [alert addButtonWithTitle:@"OK"];
+        [alert setMessageText:@"str"];
+        [alert runModal];
+    }
+}
+
+- (IBAction)duree:(NSTextFieldCell *)sender {
+  int dureeV = [sender integerValue];
+    NSString *str = [NSString stringWithFormat:@"%d",dureeV];
+    NSAlert *alert = [[NSAlert alloc]init];
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:str];
+    [alert runModal];
+    
 }
 
 
@@ -30,19 +49,15 @@ int nbreTaches;
 
 }
 
--(void)duree{
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:@"Hello"];
-    [alert runModal];
 
-    
-}
+
 -(void)controlTextDidEndEditing:(NSNotification *)obj{
+    cell = [[tableView selectedCell]stringValue];
     NSAlert *alert = [[NSAlert alloc]init];
     [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:@"Bonjour"];
-    [alert runModal];
+    [alert setMessageText:cell];
+        [alert runModal];
+    
 
 }
 
@@ -126,5 +141,7 @@ int nbreTaches;
     [alert runModal];
 
     
+
+
 }
 @end

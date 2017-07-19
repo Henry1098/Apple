@@ -958,7 +958,7 @@
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     <connections>
-                                                                        <action selector="duree:" target="XfG-lQ-9wD" id="4fj-aV-y5v"/>
+                                                                        <action selector="duree:" target="XfG-lQ-9wD" id="69f-hM-UrC"/>
                                                                     </connections>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
@@ -1047,6 +1047,9 @@
                                                                 </connections>
                                                             </tableColumn>
                                                         </tableColumns>
+                                                        <connections>
+                                                            <action selector="colonnes:" target="XfG-lQ-9wD" id="U2c-RS-QJ4"/>
+                                                        </connections>
                                                     </tableView>
                                                 </subviews>
                                             </clipView>

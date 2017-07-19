@@ -15,6 +15,7 @@
     NSMutableDictionary *dict;
     NSMutableDictionary *checkState;
     int number;   //nombre de tâches
+    NSString *cell;
 }
 //@property (weak) IBOutlet Ordonnancement *tableView;
 @property (assign) IBOutlet NSArrayController *arrayController;
