@@ -18,7 +18,6 @@
 		6B8189111F1F8E900000423F /* Liens.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B81890F1F1F8E900000423F /* Liens.m */; };
 		6B8798A21F1D1B4B0017E327 /* Lien.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8798A11F1D1B4B0017E327 /* Lien.xib */; };
 		6B8798E41F1D520B0017E327 /* NouveauProjet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8798E31F1D520B0017E327 /* NouveauProjet.xib */; };
-		6BAC40781F13BB7600E03D0C /* Tache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC40771F13BB7600E03D0C /* Tache.m */; };
 		6BEE20121F0F98E100A8E87E /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE20111F0F98E100A8E87E /* Globals.m */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +60,6 @@
 		6B81890F1F1F8E900000423F /* Liens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Liens.m; sourceTree = "<group>"; };
 		6B8798A11F1D1B4B0017E327 /* Lien.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Lien.xib; sourceTree = "<group>"; };
 		6B8798E31F1D520B0017E327 /* NouveauProjet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NouveauProjet.xib; sourceTree = "<group>"; };
-		6BAC40771F13BB7600E03D0C /* Tache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tache.m; sourceTree = "<group>"; };
-		6BAC40791F13BD2800E03D0C /* Tache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tache.h; path = ../Tache.h; sourceTree = "<group>"; };
 		6BEE20101F0F98E100A8E87E /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		6BEE20111F0F98E100A8E87E /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,8 +112,6 @@
 		6B66CFDA1F0D29310017B9B9 /* Ecoplanning */ = {
 			isa = PBXGroup;
 			children = (
-				6BAC40791F13BD2800E03D0C /* Tache.h */,
-				6BAC40771F13BB7600E03D0C /* Tache.m */,
 				6B66CFDB1F0D29310017B9B9 /* AppDelegate.h */,
 				6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */,
 				6B66CFE11F0D29310017B9B9 /* ViewController.h */,
@@ -299,7 +294,6 @@
 			files = (
 				6BEE20121F0F98E100A8E87E /* Globals.m in Sources */,
 				6B66CFE31F0D29310017B9B9 /* ViewController.m in Sources */,
-				6BAC40781F13BB7600E03D0C /* Tache.m in Sources */,
 				6B8189111F1F8E900000423F /* Liens.m in Sources */,
 				6B81890D1F1F8DE20000423F /* NouveauProjet.m in Sources */,
 				6B66CFE01F0D29310017B9B9 /* main.m in Sources */,

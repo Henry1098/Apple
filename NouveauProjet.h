@@ -15,4 +15,5 @@
     __weak IBOutlet NSDatePicker *calendrier;
     NSString *strDate;
 }
+- (IBAction)sauver:(id)sender;
 @end

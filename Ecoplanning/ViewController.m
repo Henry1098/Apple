@@ -7,9 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "Globals.h"
+
 
 @implementation ViewController
 int nbreTaches;
+NSDate *datedebutProjet;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -17,7 +20,7 @@ int nbreTaches;
     [_arrayController addObject:dict];
     */
     tableView.delegate = self;
-    
+    datum = datedebutProjet;
 
 
 
@@ -83,7 +86,7 @@ int nbreTaches;
 - (IBAction)numberdisplay:(id)sender {
    NSAlert * alert = [[NSAlert alloc]init];
     [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:[NSString stringWithFormat:@"%d",number]];
+    [alert setMessageText:datedebutProjet];
     [alert runModal];
 }
 
@@ -97,7 +100,7 @@ int nbreTaches;
     
     if([event keyCode] == 0x22)
     {
-        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",@"13/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr1",@"0",@"mgt", nil];
+        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr1",@"0",@"mgt", nil];
 
         checkState = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false],[NSNumber numberWithInteger:i], nil];
         [_arrayController addObject:dict];

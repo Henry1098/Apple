@@ -9,21 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Globals : NSObject
-{
-    NSDate *datedebutProjet;
-    NSDate *dateAvancement;
-    NSString *codeProjet;
-    NSString *titreProjet;
-    NSString *Observations;
-}
 
-@property NSDate *datedebutProjet,*dateAvancement;
-@property NSString *codeProjet, *titreProjet, *Observations;
-
--(void)changementDateDebut:(NSDate*) datedeb;
--(BOOL)isWeekDay:(NSDate*) date;
--(NSDate*)verifjourdelasemaine:(NSDate *) date2;
--(NSDate*)ajouterjours:(NSDate *) date :(NSInteger) jours;
--(NSDate *)calcdate:(NSDate *) datedebut : (int) jours;
-
+    extern NSDate *datedebutProjet;
+    extern NSDate *dateAvancement;
+    extern NSString *codeProjet;
+    extern NSString *titreProjet;
+    extern NSString *Observations;
 @end

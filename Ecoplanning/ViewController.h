@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 @interface ViewController : NSViewController<NSTabViewDelegate>{
-    __weak IBOutlet NSTextFieldCell *cellView;
     IBOutlet NSButtonCell *check;
     IBOutlet NSTableView *tableView;
     IBOutlet NSButtonCell *checkButton;
@@ -16,6 +15,7 @@
     NSMutableDictionary *checkState;
     int number;   //nombre de tâches
     NSString *cell;
+    NSDate *datum;
 }
 //@property (weak) IBOutlet Ordonnancement *tableView;
 @property (assign) IBOutlet NSArrayController *arrayController;

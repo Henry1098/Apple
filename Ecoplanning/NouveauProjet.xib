@@ -119,7 +119,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="saveProjet:" target="-2" id="NIt-yX-0xe"/>
+                            <action selector="sauver:" target="-2" id="217-yh-bXi"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tm5-Lo-O6P">
