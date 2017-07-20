@@ -13,7 +13,7 @@
 @implementation ViewController
 int nbreTaches;
 NSDate *datedebutProjet;
-
+NSDate *datefin;
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -21,7 +21,7 @@ NSDate *datedebutProjet;
     */
     tableView.delegate = self;
     datum = datedebutProjet;
-
+ 
 
 
 }
@@ -100,7 +100,7 @@ NSDate *datedebutProjet;
     
     if([event keyCode] == 0x22)
     {
-        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr1",@"0",@"mgt", nil];
+        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
         checkState = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false],[NSNumber numberWithInteger:i], nil];
         [_arrayController addObject:dict];

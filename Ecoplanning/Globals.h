@@ -11,6 +11,7 @@
 @interface Globals : NSObject
 
     extern NSDate *datedebutProjet;
+    extern NSDate *datefin;
     extern NSDate *dateAvancement;
     extern NSString *codeProjet;
     extern NSString *titreProjet;

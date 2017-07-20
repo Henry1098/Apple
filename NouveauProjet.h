@@ -16,4 +16,5 @@
     NSString *strDate;
 }
 - (IBAction)sauver:(id)sender;
+-(void) setDateFin;
 @end
