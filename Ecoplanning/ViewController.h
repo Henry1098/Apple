@@ -17,8 +17,10 @@
     NSString *cell;
     NSDate *datum;
 }
+- (IBAction)calculduree:(id)sender;
 //@property (weak) IBOutlet Ordonnancement *tableView;
 @property (assign) IBOutlet NSArrayController *arrayController;
 - (IBAction)foot:(id)sender;
+- (void)calculduree;
 @end
 

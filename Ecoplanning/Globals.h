@@ -16,4 +16,5 @@
     extern NSString *codeProjet;
     extern NSString *titreProjet;
     extern NSString *Observations;
+    extern BOOL etatProjet;
 @end

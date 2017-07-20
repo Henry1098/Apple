@@ -14,6 +14,8 @@
 int nbreTaches;
 NSDate *datedebutProjet;
 NSDate *datefin;
+BOOL etatProjet;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -21,7 +23,7 @@ NSDate *datefin;
     */
     tableView.delegate = self;
     datum = datedebutProjet;
- 
+    etatProjet = false;
 
 
 }
@@ -36,33 +38,12 @@ NSDate *datefin;
     }
 }
 
-- (IBAction)duree:(NSTextFieldCell *)sender {
-  int dureeV = [sender integerValue];
-    NSString *str = [NSString stringWithFormat:@"%d",dureeV];
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:str];
-    [alert runModal];
-    
-}
-
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
 }
 
-
-
--(void)controlTextDidEndEditing:(NSNotification *)obj{
-    cell = [[tableView selectedCell]stringValue];
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:cell];
-        [alert runModal];
-    
-
-}
 
 
 - (IBAction)check:(NSButtonCell *)sender {
@@ -98,7 +79,7 @@ NSDate *datefin;
     [str2 appendString:@"Tâche "];
     [str2 appendString:str];
     
-    if([event keyCode] == 0x22)
+    if([event keyCode] == 0x22 && etatProjet == true)
     {
         dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
@@ -146,5 +127,24 @@ NSDate *datefin;
     
 
 
+}
+
+- (void)calculduree {
+    int duree = tableView.selectedCell.integerValue;
+    int row = tableView.selectedRow;
+    NSString *strdate = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"debpr"];
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = duree;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *datef = [theCalendar dateByAddingComponents:dayComponent toDate:strdate options:0];
+   
+    [_arrayController removeObjectAtArrangedObjectIndex:row];
+    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",row,@"numero",row,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datef,@"finpr",datedebutProjet,@"debpr1",datef,@"finpr1",@"0",@"mgt", nil];
+    
+ [_arrayController insertObject:dict atArrangedObjectIndex:row];
+
+    
+    
 }
 @end

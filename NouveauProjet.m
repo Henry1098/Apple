@@ -32,7 +32,7 @@
 - (IBAction)sauver:(id)sender {
  
     datedebutProjet = dateD.stringValue;
-
+    etatProjet = true;
     
     [self close];
 }
