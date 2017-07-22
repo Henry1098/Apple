@@ -44,7 +44,7 @@
     NSDateComponents * comp = [[NSDateComponents alloc]init];
     comp.day = 1;
     NSCalendar *cal = [NSCalendar currentCalendar];
-    datefin=[cal dateByAddingComponents:comp toDate:date options:0];
+    datefin=[form stringFromDate:[cal dateByAddingComponents:comp toDate:date options:0]];
     
 }
 @end
