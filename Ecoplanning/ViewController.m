@@ -17,13 +17,15 @@ NSDate *datedebutProjet;
 NSDate *datefin;
 BOOL etatProjet;
 GestionDates *gestion;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
     [_arrayController addObject:dict];
     */
     
-    tableView.delegate = (id)self;
+    tableView.delegate = self;
+    check.target = self;
     datum = datedebutProjet;
     etatProjet = false;
     SeulementEntier * entier = [[SeulementEntier alloc]init];
@@ -66,7 +68,7 @@ GestionDates *gestion;
     
     if([event keyCode] == 0x22 && etatProjet == true)
     {
-        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
+        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
         checkState = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false],[NSNumber numberWithInteger:i], nil];
         [_arrayController addObject:dict];
@@ -79,7 +81,7 @@ GestionDates *gestion;
 }
 - (IBAction)bb:(id)sender {
     [_arrayController removeObjectAtArrangedObjectIndex:3];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"31",@"numero",@"Tachhen 3",@"designation",@"1",@"durpr",@"13/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr1",@"0",@"mgt", nil];
+    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",@"31",@"numero",@"Tachhen 3",@"designation",@"1",@"durpr",@"13/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr1",@"0",@"mgt", nil];
     
     [_arrayController insertObject:dict atArrangedObjectIndex:3];
    NSString *str = [[[_arrayController arrangedObjects]objectAtIndex:4]valueForKey:@"designation"];
@@ -115,18 +117,39 @@ GestionDates *gestion;
 }
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
-    int Bol= [tableView selectedColumn];
     int row = [tableView selectedRow];
  
     [self calculduree2:4:row];
 }
 
+- (IBAction)checkded:(NSButton *)sender {
+    int Row = [tableView selectedRow];
+    
+      NSString *check = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"check"];
+    int checkd = [NSString stringWithFormat:@"%@",check];
+    
+    if(checkd == 12565)
+    {
+        NSLog(@"Yep tu as coché la tâche numéro %d",Row);
+        [checkState setValue:[NSString stringWithFormat:@"%d", Row] forKey:@"tache"];
+    }
+    if(checkd == 12309)
+    {
+        NSLog(@"Bouh, tu viens de décocher la tâche numéro %d", Row);
+        [checkState removeValueAtIndex:Row fromPropertyWithKey:@"tache"];
+    }
+    NSLog(@"%d",checkd);
+    
+}
+
 -(void)calculduree2:(int)number:(int)Row
 {
+     int row = [tableView selectedRow];
     NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"durpr"];
     
     NSString *debpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"debpr"];
    int a =[durpr intValue];
+
     NSDate *f =[form dateFromString:debpr];
    switch (a) {
         case 0:
@@ -138,9 +161,30 @@ GestionDates *gestion;
            NSDate * fin = [cal dateByAddingComponents:comp toDate:f options:nil];
        [form setDateFormat:@"dd/MM/yy"];
         fin=   [form stringFromDate:fin];
-        
+           
+           
+           
+           [dict setObject:fin forKey:@"finpr"];
+           [dict setObject:fin forKey:@"finpr1"];
+           [dict setObject:[NSNumber numberWithInt:row] forKey:@"numero"];
+           [dict setObject:[NSString stringWithFormat:@"Tâche %d",row] forKey:@"designation"];
+           
+           [_arrayController removeObjectAtArrangedObjectIndex:Row];
+           [_arrayController insertObject:dict atArrangedObjectIndex:Row];
+
            NSLog(@"%@",fin);
+           
        break;     }
+    
+
 
 }
+
+-(void)executerLiens
+{
+ 
+    
+    
+}
+
 @end

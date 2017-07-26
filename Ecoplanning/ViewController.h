@@ -22,11 +22,14 @@
     NSDateComponents * comp;
     NSCalendar *cal;
 }
-- (IBAction)calculduree:(id)sender;
+
+- (IBAction)checkded:(NSButton *)sender;
+
 - (void)calculduree2:(int)number:(int)Row;
 //@property (weak) IBOutlet Ordonnancement *tableView;
 @property (assign) IBOutlet NSArrayController *arrayController;
 - (IBAction)foot:(id)sender;
+-(void) executerLiens;
 - (void)calculduree;
 @end
 

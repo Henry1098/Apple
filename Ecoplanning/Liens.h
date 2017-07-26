@@ -9,5 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Liens : NSWindowController
+- (IBAction)executerLiens:(NSButton *)sender;
+- (IBAction)annuler:(NSButton *)sender;
+
 
 @end
