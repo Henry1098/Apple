@@ -8,55 +8,40 @@
 
 #import "ViewController.h"
 #import "Globals.h"
-
+#import "SeulementEntier.h"
+#import "GestionDates.h"
 
 @implementation ViewController
 int nbreTaches;
 NSDate *datedebutProjet;
 NSDate *datefin;
 BOOL etatProjet;
-
+GestionDates *gestion;
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
     [_arrayController addObject:dict];
     */
-    tableView.delegate = self;
+    
+    tableView.delegate = (id)self;
     datum = datedebutProjet;
     etatProjet = false;
-
+    SeulementEntier * entier = [[SeulementEntier alloc]init];
+    gestion = [[GestionDates alloc]init];
+    [dureeprev setFormatter:entier];
+    form = [[NSDateFormatter alloc]init];
+    comp =[[NSDateComponents alloc]init];
+    cal =[NSCalendar currentCalendar];
+    [form setDateFormat:@"dd/MM/yy"];    
 
 }
-
-- (IBAction)colonnes:(id)sender {
-    if([tableView selectedColumn ]== 4)
-    {
-        NSAlert *alert = [[NSAlert alloc]init];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:@"str"];
-        [alert runModal];
-    }
-}
-
-
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
 }
 
-
-
-- (IBAction)check:(NSButtonCell *)sender {
-    NSInteger selected = [tableView selectedRow];
-    NSString *str;
-    str = [[NSString alloc]initWithFormat:@"%d",(int) selected];
-    
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:str];
-    [alert runModal];
-
-
+- (IBAction)calcduree:(id)sender {
+    NSLog(@"Hello");
 }
 
 - (IBAction)message:(id)sender {    NSAlert *alert = [[NSAlert alloc]init];
@@ -67,7 +52,7 @@ BOOL etatProjet;
 - (IBAction)numberdisplay:(id)sender {
    NSAlert * alert = [[NSAlert alloc]init];
     [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:datedebutProjet];
+    [alert setMessageText:@"datedebutProjet"];
     [alert runModal];
 }
 
@@ -88,9 +73,9 @@ BOOL etatProjet;
         
         [check setTag:i];
     
-    }
+    
     nbreTaches = i;
-    i++;
+        i++;}
 }
 - (IBAction)bb:(id)sender {
     [_arrayController removeObjectAtArrangedObjectIndex:3];
@@ -128,23 +113,34 @@ BOOL etatProjet;
 
 
 }
+-(void)controlTextDidEndEditing:(NSNotification *)obj
+{
+    int Bol= [tableView selectedColumn];
+    int row = [tableView selectedRow];
+ 
+    [self calculduree2:4:row];
+}
 
-- (void)calculduree {
-    int duree = tableView.selectedCell.integerValue;
-    int row = tableView.selectedRow;
-    NSString *strdate = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"debpr"];
-    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
-    dayComponent.day = duree;
+-(void)calculduree2:(int)number:(int)Row
+{
+    NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"durpr"];
     
-    NSCalendar *theCalendar = [NSCalendar currentCalendar];
-    NSDate *datef = [theCalendar dateByAddingComponents:dayComponent toDate:strdate options:0];
-   
-    [_arrayController removeObjectAtArrangedObjectIndex:row];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",row,@"numero",row,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datef,@"finpr",datedebutProjet,@"debpr1",datef,@"finpr1",@"0",@"mgt", nil];
-    
- [_arrayController insertObject:dict atArrangedObjectIndex:row];
+    NSString *debpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"debpr"];
+   int a =[durpr intValue];
+    NSDate *f =[form dateFromString:debpr];
+   switch (a) {
+        case 0:
+            NSLog(@"Number 0");
+            break;
+           
+        default:
+           comp.day = a-1;
+           NSDate * fin = [cal dateByAddingComponents:comp toDate:f options:nil];
+       [form setDateFormat:@"dd/MM/yy"];
+        fin=   [form stringFromDate:fin];
+        
+           NSLog(@"%@",fin);
+       break;     }
 
-    
-    
 }
 @end

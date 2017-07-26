@@ -21,6 +21,9 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     
 }
+- (IBAction)annuler:(id)sender {
+    [self close];
+}
 - (IBAction)dateSelection:(id)sender {
     NSDateFormatter *format = [[NSDateFormatter alloc]init];
     [format setDateFormat:@"dd/MM/yy"];

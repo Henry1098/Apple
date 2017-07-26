@@ -16,8 +16,14 @@
     int number;   //nombre de tâches
     NSString *cell;
     NSDate *datum;
+    __weak IBOutlet NSTextFieldCell *dureeprev;
+    NSDateFormatter *form;
+    
+    NSDateComponents * comp;
+    NSCalendar *cal;
 }
 - (IBAction)calculduree:(id)sender;
+- (void)calculduree2:(int)number:(int)Row;
 //@property (weak) IBOutlet Ordonnancement *tableView;
 @property (assign) IBOutlet NSArrayController *arrayController;
 - (IBAction)foot:(id)sender;
