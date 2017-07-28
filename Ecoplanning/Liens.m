@@ -8,7 +8,7 @@
 
 #import "Liens.h"
 #import "ViewController.h"
-
+#import "Globals.h"
 @interface Liens ()
 
 @end
@@ -23,7 +23,26 @@ ViewController *view;
 }
 
 - (IBAction)executerLiens:(NSButton *)sender {
+if([FD state] == NSOnState)
+{
+    lientache.FD = YES;
+    lientache.DD = NO;
+    lientache.FF = NO;
+}
+if([DD state] == NSOnState)
+{
+    lientache.FD = NO;
+    lientache.DD = YES;
+    lientache.FF = NO;
 
+}
+if([FF state] == NSOnState)
+{
+        lientache.FD = NO;
+        lientache.DD = NO;
+        lientache.FF = YES;
+
+}
     [self close];
     
         [view executerLiens];

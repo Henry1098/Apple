@@ -12,7 +12,7 @@
     IBOutlet NSTableView *tableView;
     IBOutlet NSButtonCell *checkButton;
     NSMutableDictionary *dict;
-    NSMutableDictionary *checkState;
+    NSMutableArray *checkState;
     int number;   //nombre de tâches
     NSString *cell;
     NSDate *datum;
@@ -22,6 +22,7 @@
     NSDateComponents * comp;
     NSCalendar *cal;
 }
+- (IBAction)bre:(id)sender;
 
 - (IBAction)checkded:(NSButton *)sender;
 

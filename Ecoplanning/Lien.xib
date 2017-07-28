@@ -7,7 +7,13 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="Liens"/>
+        <customObject id="-2" userLabel="File's Owner" customClass="Liens">
+            <connections>
+                <outlet property="DD" destination="Lqt-pZ-dKO" id="ihj-bh-03l"/>
+                <outlet property="FD" destination="hfA-D6-paZ" id="u4a-V7-4fc"/>
+                <outlet property="FF" destination="JPD-Gx-dTc" id="T8X-zj-ysg"/>
+            </connections>
+        </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">

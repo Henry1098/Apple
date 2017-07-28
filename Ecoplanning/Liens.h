@@ -8,7 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface Liens : NSWindowController
+@interface Liens : NSWindowController{
+    
+    __weak IBOutlet NSButton *FF;
+    __weak IBOutlet NSButton *FD;
+    __weak IBOutlet NSButton *DD;
+}
 - (IBAction)executerLiens:(NSButton *)sender;
 - (IBAction)annuler:(NSButton *)sender;
 

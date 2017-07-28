@@ -10,6 +10,8 @@
 #import "Globals.h"
 #import "SeulementEntier.h"
 #import "GestionDates.h"
+#import "Successeur.h"
+#import "Predecesseur.h"
 
 @implementation ViewController
 int nbreTaches;
@@ -17,6 +19,10 @@ NSDate *datedebutProjet;
 NSDate *datefin;
 BOOL etatProjet;
 GestionDates *gestion;
+Successeur *successeur ;
+Predecesseur *predeccesseur;
+Globals *globals;
+LienTache lientache;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,12 +36,18 @@ GestionDates *gestion;
     etatProjet = false;
     SeulementEntier * entier = [[SeulementEntier alloc]init];
     gestion = [[GestionDates alloc]init];
+    globals = [[Globals alloc]init];
+    checkState = [NSMutableArray array];
+    successeur = [[Successeur alloc]init];
+    [Successeur initialize];
+    predeccesseur = [[Predecesseur alloc]init];
+    [predeccesseur initialize];
     [dureeprev setFormatter:entier];
     form = [[NSDateFormatter alloc]init];
     comp =[[NSDateComponents alloc]init];
     cal =[NSCalendar currentCalendar];
     [form setDateFormat:@"dd/MM/yy"];    
-
+    
 }
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
@@ -70,7 +82,7 @@ GestionDates *gestion;
     {
         dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
-        checkState = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false],[NSNumber numberWithInteger:i], nil];
+      
         [_arrayController addObject:dict];
         
         [check setTag:i];
@@ -113,7 +125,6 @@ GestionDates *gestion;
 
     
 
-
 }
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
@@ -122,25 +133,82 @@ GestionDates *gestion;
     [self calculduree2:4:row];
 }
 
+- (IBAction)bre:(id)sender {
+    
+    lientache.FD = YES;
+        NSLog(@"%@",checkState);
+    int counter = (int) [checkState count];
+    int counter2 = (int)[checkState count]-1;
+    NSString *str;
+    NSString *des;
+    NSString *duree;
+    NSString* debpr;
+    NSString* Mgt;
+        NSString *str2;
+        NSString *des2;
+        NSString *duree2;
+        NSString* debpr2;
+        NSString* Mgt2;
+    int i = 0;
+    
+    while (i< counter)
+    {
+        str = [checkState objectAtIndex:i];
+
+         des = [[[_arrayController arrangedObjects]objectAtIndex:i+1]valueForKey:@"designation"];
+        duree =[[[_arrayController arrangedObjects]objectAtIndex:i+1]valueForKey:@"durpr"];
+      debpr = [[[_arrayController arrangedObjects]objectAtIndex:i]valueForKey:@"debpr"];
+      Mgt = [[[_arrayController arrangedObjects]objectAtIndex:i+1]valueForKey:@"mgt"];
+        if(i <= counter2 && [checkState[i] intValue] > [checkState[0] intValue]&&i < counter2){
+       str2 = [checkState objectAtIndex:i-1];
+        des2 = [[[_arrayController arrangedObjects]objectAtIndex:i-1]valueForKey:@"designation"];
+      duree2 =[[[_arrayController arrangedObjects]objectAtIndex:i-1]valueForKey:@"durpr"];
+        debpr2= [[[_arrayController arrangedObjects]objectAtIndex:i]valueForKey:@"debpr"];
+       Mgt2 = [[[_arrayController arrangedObjects]objectAtIndex:i-1]valueForKey:@"mgt"];
+        }
+        
+        if(i== [checkState[0] intValue])
+        {
+          
+            [successeur ajouterSuccesseur:[checkState firstObject] :str :des :duree :debpr :[globals renvoiLien] :@"0" :Mgt :debpr];
+        }
+        if(i <= counter2&& [checkState[i] intValue]> [checkState[0] intValue]&& i<counter2){
+            [predeccesseur ajouterPredecesseur: [checkState objectAtIndex:i-1]:str2 :des2 :duree2 :debpr2 :[globals renvoiLien] :@"0" :Mgt2];
+            
+            [successeur ajouterSuccesseur:[checkState objectAtIndex:i+1] :str :des :duree :debpr :[globals renvoiLien] :@"0" :Mgt :debpr];
+            
+            
+            
+        }
+        
+        i++;
+        
+    }
+    
+    [predeccesseur afficherPredecesseur];
+    NSLog(@"%@",successeur);
+}
+
+
 - (IBAction)checkded:(NSButton *)sender {
     int Row = [tableView selectedRow];
     
       NSString *check = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"check"];
     int checkd = [NSString stringWithFormat:@"%@",check];
     
+   NSString *str= [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"numero"];
     if(checkd == 12565)
     {
         NSLog(@"Yep tu as coché la tâche numéro %d",Row);
-        [checkState setValue:[NSString stringWithFormat:@"%d", Row] forKey:@"tache"];
+        [checkState addObject:str];
     }
     if(checkd == 12309)
     {
         NSLog(@"Bouh, tu viens de décocher la tâche numéro %d", Row);
-        [checkState removeValueAtIndex:Row fromPropertyWithKey:@"tache"];
+        [checkState removeObject:str];
+        
     }
-    NSLog(@"%d",checkd);
-    
-}
+  }
 
 -(void)calculduree2:(int)number:(int)Row
 {

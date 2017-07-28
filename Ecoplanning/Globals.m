@@ -10,4 +10,23 @@
 
 @implementation Globals
 
+-(NSString *)renvoiLien
+{
+    NSString *lien;
+  if(lientache.DD == YES)
+  {
+      lien =@"DD";
+  }
+    if(lientache.FD == YES)
+    {
+        lien = @"FD";
+    }
+    if(lientache.FF ==YES)
+    {
+        lien= @"FF";
+    }
+    
+    return lien;
+             
+}
 @end
