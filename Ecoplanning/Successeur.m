@@ -10,6 +10,7 @@
 
 @implementation Successeur
 
+@synthesize nombreSuccesseur;
 
 -(void)initialize
 {
@@ -22,6 +23,7 @@
     sDecal = [NSMutableArray array];
     sMgT = [NSMutableArray array];
     DebavTache =[NSMutableArray array];
+    nombreSuccesseur = 0;
 }
 
 
@@ -37,5 +39,17 @@
     [sDecal addObject:sDecal_];
     [sMgT addObject:sMgT_];
     [DebavTache addObject:DebavTache_];
+    nombreSuccesseur++;
 }
+
+
+-(void)afficherSuccesseur{
+    
+    for (int i = 0; i<nombreSuccesseur;i++)
+    {
+        NSLog(@"Tache %@ Successeur numero %@ avec la designation %@ et de la duree %@ et DebTot %@ et lien %@ . Avec le décalage %@ , une marge de %@ et DebAvTache de %@",numero[i],snumero[i],sdesignation[i],sduree[i],sDebTot[i], sLien[i],sDecal[i],sMgT[i], DebavTache[i]);
+    }
+}
+
+
 @end

@@ -39,7 +39,7 @@ LienTache lientache;
     globals = [[Globals alloc]init];
     checkState = [NSMutableArray array];
     successeur = [[Successeur alloc]init];
-    [Successeur initialize];
+    [successeur initialize];
     predeccesseur = [[Predecesseur alloc]init];
     [predeccesseur initialize];
     [dureeprev setFormatter:entier];
@@ -167,7 +167,7 @@ LienTache lientache;
        Mgt2 = [[[_arrayController arrangedObjects]objectAtIndex:i-1]valueForKey:@"mgt"];
         }
         
-        if(i== [checkState[0] intValue])
+        if(i== (int)[checkState[0] intValue])
         {
           
             [successeur ajouterSuccesseur:[checkState firstObject] :str :des :duree :debpr :[globals renvoiLien] :@"0" :Mgt :debpr];
@@ -186,7 +186,7 @@ LienTache lientache;
     }
     
     [predeccesseur afficherPredecesseur];
-    NSLog(@"%@",successeur);
+    [successeur afficherSuccesseur];
 }
 
 
