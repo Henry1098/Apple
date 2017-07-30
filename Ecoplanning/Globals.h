@@ -25,7 +25,7 @@ typedef struct{
     extern NSString *Observations;
     extern BOOL etatProjet;
     extern LienTache lientache;
-
+    extern NSMutableArray *tachescochees;
 
 -(NSString *)renvoiLien;
 @end

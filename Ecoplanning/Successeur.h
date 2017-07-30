@@ -10,19 +10,11 @@
 
 @interface Successeur : NSObject
 {
-    NSMutableArray *numero;
-    NSMutableArray *snumero;
-    NSMutableArray *sdesignation;
-    NSMutableArray *sduree;
-    NSMutableArray *sDebTot;
-    NSMutableArray *sLien;
-    NSMutableArray *sDecal;
-    NSMutableArray *sMgT;
-    NSMutableArray *DebavTache;
+    NSMutableDictionary *successeur;
     int nombreSuccesseur;
 }
 
-@property NSMutableArray *numero, *snumero,*sdesignation, *sduree, *sDebTot, *sLien, *sDecal, *sMgT, *DebavTache;
+@property (copy) NSMutableDictionary *successeur;
 @property int nombreSuccesseur;
 -(void)initialize;
 -(void)ajouterSuccesseur:(NSString *)numero_:(NSString *)snumero_:(NSString *)sdesignation_:(NSString *)sduree_:(NSString *)psDebTot_:(NSString *)sLien_:(NSString *)sDecal_:(NSString *)sMgT_:(NSString *)DebavTache_;

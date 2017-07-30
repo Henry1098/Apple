@@ -10,17 +10,11 @@
 
 @interface Predecesseur : NSObject
 {
-    NSMutableArray *numero;
-    NSMutableArray *pnumero;
-    NSMutableArray *pdesignation;
-    NSMutableArray *pduree;
-    NSMutableArray *pPosDebPr;
-    NSMutableArray *pLien;
-    NSMutableArray *pDecal;
-    NSMutableArray *pMgT;
+    NSMutableDictionary *predecesseur;
     int nombrePredecesseur;
 }
 @property (copy) NSMutableArray *numero, *pnumero,*pdesignation, *pduree, *pPosDebPr, *pLien, *pDecal, *pMgT;
+@property (copy) NSMutableDictionary *predecesseur;
 @property int nombrePredecesseur;
 
 -(void)initialize;
