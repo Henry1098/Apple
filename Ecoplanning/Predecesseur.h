@@ -19,5 +19,4 @@
 
 -(void)initialize;
 -(void)ajouterPredecesseur:(NSString *)numero_:(NSString *)pnumero_:(NSString *)pdesignation_:(NSString *)pduree_:(NSString *)pPosDebPr_:(NSString *)pLien_:(NSString *)pDecal_:(NSString *)pMgT_;
--(void)afficherPredecesseur;
-@end
+-(void)afficherPredecesseur;@end

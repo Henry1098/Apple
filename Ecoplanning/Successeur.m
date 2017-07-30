@@ -21,7 +21,10 @@
 
 -(void)ajouterSuccesseur:(NSString *)numero_ :(NSString *)snumero_ :(NSString *)sdesignation_ :(NSString *)sduree_ :(NSString *)psDebTot_ :(NSString *)sLien_ :(NSString *)sDecal_ :(NSString *)sMgT_ :(NSString *)DebavTache_
 {
-    successeur = [NSMutableDictionary dictionaryWithObjectsAndKeys:snumero_,@"snumero",sdesignation_, @"sdesignation", sduree_, @"sduree",psDebTot_,@"sDebTot",sLien_, @"sLien",sDecal_, @"sDecal",DebavTache_, @"DebavTache", nil];
+    successeur = [NSMutableDictionary dictionaryWithObjectsAndKeys:numero_, @"numero",snumero_,@"snumero",sdesignation_, @"sdesignation", sduree_, @"sduree",psDebTot_,@"sDebTot",sLien_, @"sLien",sDecal_, @"sDecal",DebavTache_, @"DebavTache", nil];
+    NSString *str = [successeur objectForKey:@"numero"];
+    NSLog(@"Successeur : %@",str);
+    
     nombreSuccesseur++;
 }
 

@@ -129,44 +129,107 @@ NSMutableArray *tachescochees;
 }
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
-    int row = [tableView selectedRow];
- 
+    int row = tableView.selectedCell.intValue;
+    
     [self calculduree2:4:row];
 }
 
 - (IBAction)bre:(id)sender {
+
+    [self lierVersionUnPred];
+    [self lierVersionUnSucc];
+
+}
+
+-(void)lierVersionUnSucc
+{
     tachescochees =  checkState;
     lientache.FD = YES;
     int j = 0;
-    int nt;
+    int nt = 0;
     static int counter;
     counter = (int)checkState.count;
     for(int i= 0;i <counter;i++){
-       
-        if(i!=0){
-        nt = [[checkState objectAtIndex:i-1]intValue];
-        
-              if(nt != [[checkState firstObject]intValue]){
-                
-     NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
-        
-            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
-        
-            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
-        
-        
-        
-            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
-        
-        [predeccesseur ajouterPredecesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT];
-       
-            
-/*     [successeur ajouterSuccesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT:pPosDebpr]; */
-              }
+        if(i==(int)checkState.count)
+        {
+            return;
         }
+        if(i!=(int)checkState.count){
+            nt = [[checkState objectAtIndex:i+1]intValue];}
+        
+        
+        if(nt != [[checkState lastObject]intValue]){
+            
+            NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
+            
+            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
+            
+            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
+            
+            
+            
+            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
+            
+            
+               [successeur ajouterSuccesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT:pPosDebpr];
+        }else{
+            
+            return;
+        }
+    }
+    
 }
+-(void)lierVersionUnPred
+{
+    
+    tachescochees =  checkState;
+    lientache.FD = YES;
+    int j = 0;
+    int nt = 0;
+    static int counter;
+    counter = (int)checkState.count;
+    for(int i= 0;i <counter;i++){
+        if(i==0)
+        {
+            nt = [[checkState objectAtIndex:i]intValue];
+        }
+        if(i!=0){
+            nt = [[checkState objectAtIndex:i-1]intValue];}
+        
+        
+        if(nt != [[checkState firstObject]intValue]){
+            
+            NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
+            
+            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
+            
+            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
+            
+            
+            
+            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
+            
+            [predeccesseur ajouterPredecesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT];
+            
+            /*     [successeur ajouterSuccesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT:pPosDebpr]; */
+        }else{
+            
+            
+            NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
+            
+            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
+            
+            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
+            
+            
+            
+            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
+            
+            [predeccesseur ajouterPredecesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT];
+            
+        }
+    }
 }
-
 - (IBAction)checkded:(NSButton *)sender {
     int Row = [tableView selectedRow];
     NSString *check = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"check"];

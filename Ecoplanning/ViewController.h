@@ -32,5 +32,7 @@
 - (IBAction)foot:(id)sender;
 -(void) executerLiens;
 - (void)calculduree;
+-(void)lierVersionUnPred;
+-(void)lierVersionUnSucc;
 @end
 

@@ -23,9 +23,7 @@
     
     predecesseur = [NSMutableDictionary dictionaryWithObjectsAndKeys:numero_, @"numero", pnumero_,@"pnumero",pdesignation_, @"pdesignation",pduree_,@"pduree",pPosDebPr_,@"pPosDebPr",pLien_,@"pLien",pDecal_,@"pDecal",pMgT_,@"pMgT", nil];
     NSString *str = [predecesseur objectForKey:@"numero"];
-    NSLog(@"%@",str);
+    NSLog(@"Predecesseur : %@",str);
     nombrePredecesseur++;
 }
-
-
 @end
