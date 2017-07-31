@@ -129,7 +129,7 @@ NSMutableArray *tachescochees;
 }
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
-    int row = tableView.selectedCell.intValue;
+    int row = [tableView selectedRow];
     
     [self calculduree2:4:row];
 }
@@ -263,7 +263,7 @@ NSMutableArray *tachescochees;
 
 -(void)calculduree2:(int)number:(int)Row
 {
-     int row = [tableView selectedRow];
+    int row = [tableView selectedRow];
     NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"durpr"];
     
     NSString *debpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"debpr"];
@@ -283,14 +283,8 @@ NSMutableArray *tachescochees;
            
            
            
-           [dict setObject:fin forKey:@"finpr"];
-           [dict setObject:fin forKey:@"finpr1"];
-           [dict setObject:[NSNumber numberWithInt:row] forKey:@"numero"];
-           [dict setObject:[NSString stringWithFormat:@"Tâche %d",row] forKey:@"designation"];
+           [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:fin forKey:@"finpr"];
            
-           [_arrayController removeObjectAtArrangedObjectIndex:Row];
-           [_arrayController insertObject:dict atArrangedObjectIndex:Row];
-
            NSLog(@"%@",fin);
            
        break;     }
