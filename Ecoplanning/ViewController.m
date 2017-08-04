@@ -11,6 +11,8 @@
 #import "SeulementEntier.h"
 #import "Successeur.h"
 #import "Predecesseur.h"
+#import "GestionDates.h"
+#import "Tache.h"
 
 @implementation ViewController
 int nbreTaches;
@@ -23,7 +25,10 @@ Globals *globals;
 LienTache lientache;
 NSMutableArray *array;
 NSMutableArray *tachescochees;
-
+GestionDates *gestion;
+static int counterliaison; // Compte les nombres des fois qu'une liaison est effectué
+NSMutableArray *array;
+Tache *tache;
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -31,6 +36,7 @@ NSMutableArray *tachescochees;
     */
     
     tableView.delegate = self;
+    tache = [[Tache alloc]init];
     check.target = self;
     datum = datedebutProjet;
     etatProjet = false;
@@ -48,7 +54,7 @@ NSMutableArray *tachescochees;
     comp =[[NSDateComponents alloc]init];
     cal =[NSCalendar currentCalendar];
     [form setDateFormat:@"dd/MM/yy"];    
-    
+    gestion = [[GestionDates alloc]init];
 }
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
@@ -81,6 +87,18 @@ NSMutableArray *tachescochees;
     
     if([event keyCode] == 0x22 && etatProjet == true)
     {
+        
+        
+        [tache.check addObject:[NSNumber numberWithBool:NO]];
+        [tache.numero addObject:str];
+        [tache.designation addObject:str2];
+        [tache.designation addObject:@"1"];
+        [tache.debpr addObject:datedebutProjet];
+        [tache.finpr addObject:datefin];
+        [tache.debpr1 addObject:datedebutProjet];
+        [tache.finpr1 addObject:datefin];
+        [tache.MgT addObject:@"0"];
+        
         dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
       
@@ -265,7 +283,7 @@ NSMutableArray *tachescochees;
 {
     int row = [tableView selectedRow];
     NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"durpr"];
-    
+    NSDate *fin;
     NSString *debpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"debpr"];
    int a =[durpr intValue];
 
@@ -276,12 +294,12 @@ NSMutableArray *tachescochees;
             break;
            
         default:
-           comp.day = a-1;
+/*           comp.day = a-1;
            NSDate * fin = [cal dateByAddingComponents:comp toDate:f options:nil];
        [form setDateFormat:@"dd/MM/yy"];
         fin=   [form stringFromDate:fin];
-           
-           
+  */
+          fin =[form stringFromDate:[gestion calcdates:f :a]];
            
            [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:fin forKey:@"finpr"];
            
@@ -295,7 +313,45 @@ NSMutableArray *tachescochees;
 
 -(void)executerLiens
 {
- 
+    counterliaison = gcounterliaison;
+    if(counterliaison ==1)
+    {
+       
+        for (int i = 0; i < [checkState count]; i++) {
+
+        if(i == 0)
+        {
+            
+            NSString * zero = [checkState objectAtIndex:0];
+            NSString *premier = [checkState objectAtIndex:1];
+            int zeroo = [zero intValue];
+            int premierr =[premier intValue];
+            NSString *finpr = [[[_arrayController arrangedObjects]objectAtIndex:0]valueForKey:@"finpr"];
+            NSDate *temp = [form dateFromString:finpr];
+            NSDate *final = [gestion calcdates:temp :2];
+            
+           NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:premierr]valueForKey:@"durpr"];
+            
+            int duree = [durpr intValue];
+            NSDate *tmp = [gestion calcdates:final :duree];
+            
+            
+           [[[_arrayController arrangedObjects]objectAtIndex:3] setValue:final forKey:@"debpr"];
+             [[[_arrayController arrangedObjects]objectAtIndex:[checkState objectAtIndex:1]]setValue:final forKey:@"debpr1"];
+            
+           [[[_arrayController arrangedObjects]objectAtIndex:3]setValue:tmp forKey:@"finpr"];
+            [[[_arrayController arrangedObjects]objectAtIndex:3]setValue:tmp forKey:@"finpr1"];
+            
+        }
+        }
+        
+        
+        
+        
+    }
+    
+    
+    
     
     
 }

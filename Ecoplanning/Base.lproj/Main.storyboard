@@ -903,12 +903,9 @@
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                 </tableHeaderCell>
-                                                                <buttonCell key="dataCell" type="check" bezelStyle="regularSquare" imagePosition="only" continuous="YES" identifier="CheckBoxID" inset="2" id="YiH-tt-O8j">
+                                                                <buttonCell key="dataCell" type="check" bezelStyle="regularSquare" imagePosition="left" inset="2" id="JXS-Cz-8rs">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="system"/>
-                                                                    <connections>
-                                                                        <action selector="checkded:" target="XfG-lQ-9wD" id="RbU-7R-IiJ"/>
-                                                                    </connections>
                                                                 </buttonCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <connections>
@@ -1432,15 +1429,13 @@
                     </tabView>
                     <connections>
                         <outlet property="arrayController" destination="Aih-eI-Ce1" id="aPG-1a-exo"/>
-                        <outlet property="check" destination="YiH-tt-O8j" id="dVH-2Y-eqe"/>
-                        <outlet property="checkButton" destination="YiH-tt-O8j" id="Edw-Qs-3X6"/>
                         <outlet property="dureeprev" destination="rLb-q2-LMK" id="xcf-12-f99"/>
                         <outlet property="tableView" destination="DD2-bY-rhe" id="cMh-VE-bXG"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="FGY-qj-Kjs" customClass="ViewController"/>
-                <arrayController id="Aih-eI-Ce1"/>
+                <arrayController objectClassName="Tache" id="Aih-eI-Ce1"/>
             </objects>
             <point key="canvasLocation" x="2305.5" y="389.5"/>
         </scene>

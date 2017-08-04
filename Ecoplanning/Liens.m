@@ -16,6 +16,7 @@
 @implementation Liens
 
 ViewController *view;
+int gcounterliaison;
 - (void)windowDidLoad {
     [super windowDidLoad];
     view = [[ViewController alloc]init];
@@ -43,9 +44,9 @@ if([FF state] == NSOnState)
         lientache.FF = YES;
 
 }
-    [self close];
-    
+    gcounterliaison= 1;
         [view executerLiens];
+    [self close];
 }
 
 - (IBAction)annuler:(NSButton *)sender {

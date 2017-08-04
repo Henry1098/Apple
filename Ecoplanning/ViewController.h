@@ -21,7 +21,9 @@
     
     NSDateComponents * comp;
     NSCalendar *cal;
+    
 }
+
 - (IBAction)bre:(id)sender;
 
 - (IBAction)checkded:(NSButton *)sender;

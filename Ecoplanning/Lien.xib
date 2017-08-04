@@ -12,6 +12,7 @@
                 <outlet property="DD" destination="Lqt-pZ-dKO" id="ihj-bh-03l"/>
                 <outlet property="FD" destination="hfA-D6-paZ" id="u4a-V7-4fc"/>
                 <outlet property="FF" destination="JPD-Gx-dTc" id="T8X-zj-ysg"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="IZr-1Z-wkD"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
