@@ -19,6 +19,7 @@
     __weak IBOutlet NSTextFieldCell *dureeprev;
     NSDateFormatter *form;
     
+    IBOutlet NSArrayController *predArray;
     NSDateComponents * comp;
     NSCalendar *cal;
     

@@ -20,6 +20,9 @@
 		6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5C11F37FA3D007E9F75 /* NouveauProjet.m */; };
 		6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5ED1F3824EB007E9F75 /* Predecesseur.m */; };
 		6BB5C5F11F382560007E9F75 /* GestionPredecesseur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5F01F38255F007E9F75 /* GestionPredecesseur.m */; };
+		6BB5C5F41F3829C6007E9F75 /* GestionSuccesseur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5F31F3829C6007E9F75 /* GestionSuccesseur.m */; };
+		6BB5C5F71F3829D4007E9F75 /* Successeur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5F61F3829D4007E9F75 /* Successeur.m */; };
+		6BB5C5FA1F385D3A007E9F75 /* Tache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5F91F385D3A007E9F75 /* Tache.m */; };
 		6BBD4B161F28982600B606C1 /* SeulementEntier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD4B151F28982600B606C1 /* SeulementEntier.m */; };
 		6BBD4B191F28AE1C00B606C1 /* Dates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD4B171F28AE1C00B606C1 /* Dates.cpp */; };
 		6BBD4B1C1F28B59700B606C1 /* GestionDates.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD4B1B1F28B59700B606C1 /* GestionDates.mm */; };
@@ -69,6 +72,12 @@
 		6BB5C5ED1F3824EB007E9F75 /* Predecesseur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Predecesseur.m; path = ../../../../Predecesseur.m; sourceTree = "<group>"; };
 		6BB5C5EF1F38255F007E9F75 /* GestionPredecesseur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestionPredecesseur.h; path = ../../../../GestionPredecesseur.h; sourceTree = "<group>"; };
 		6BB5C5F01F38255F007E9F75 /* GestionPredecesseur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GestionPredecesseur.m; path = ../../../../GestionPredecesseur.m; sourceTree = "<group>"; };
+		6BB5C5F21F3829C6007E9F75 /* GestionSuccesseur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestionSuccesseur.h; sourceTree = "<group>"; };
+		6BB5C5F31F3829C6007E9F75 /* GestionSuccesseur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestionSuccesseur.m; sourceTree = "<group>"; };
+		6BB5C5F51F3829D4007E9F75 /* Successeur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Successeur.h; sourceTree = "<group>"; };
+		6BB5C5F61F3829D4007E9F75 /* Successeur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Successeur.m; sourceTree = "<group>"; };
+		6BB5C5F81F385D3A007E9F75 /* Tache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tache.h; sourceTree = "<group>"; };
+		6BB5C5F91F385D3A007E9F75 /* Tache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tache.m; sourceTree = "<group>"; };
 		6BBD4B141F28982600B606C1 /* SeulementEntier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeulementEntier.h; sourceTree = "<group>"; };
 		6BBD4B151F28982600B606C1 /* SeulementEntier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeulementEntier.m; sourceTree = "<group>"; };
 		6BBD4B171F28AE1C00B606C1 /* Dates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dates.cpp; sourceTree = "<group>"; };
@@ -133,11 +142,17 @@
 				6B66CFDB1F0D29310017B9B9 /* AppDelegate.h */,
 				6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */,
 				6B66CFE11F0D29310017B9B9 /* ViewController.h */,
+				6B66CFE21F0D29310017B9B9 /* ViewController.m */,
+				6BB5C5F81F385D3A007E9F75 /* Tache.h */,
+				6BB5C5F91F385D3A007E9F75 /* Tache.m */,
 				6BB5C5EC1F3824EB007E9F75 /* Predecesseur.h */,
 				6BB5C5ED1F3824EB007E9F75 /* Predecesseur.m */,
 				6BB5C5EF1F38255F007E9F75 /* GestionPredecesseur.h */,
 				6BB5C5F01F38255F007E9F75 /* GestionPredecesseur.m */,
-				6B66CFE21F0D29310017B9B9 /* ViewController.m */,
+				6BB5C5F21F3829C6007E9F75 /* GestionSuccesseur.h */,
+				6BB5C5F31F3829C6007E9F75 /* GestionSuccesseur.m */,
+				6BB5C5F51F3829D4007E9F75 /* Successeur.h */,
+				6BB5C5F61F3829D4007E9F75 /* Successeur.m */,
 				6BBD4B171F28AE1C00B606C1 /* Dates.cpp */,
 				6BBD4B181F28AE1C00B606C1 /* Dates.hpp */,
 				6B66CFE41F0D29310017B9B9 /* Assets.xcassets */,
@@ -320,7 +335,10 @@
 				6BEE20121F0F98E100A8E87E /* Globals.m in Sources */,
 				6BBD4B161F28982600B606C1 /* SeulementEntier.m in Sources */,
 				6BB5C5F11F382560007E9F75 /* GestionPredecesseur.m in Sources */,
+				6BB5C5FA1F385D3A007E9F75 /* Tache.m in Sources */,
+				6BB5C5F71F3829D4007E9F75 /* Successeur.m in Sources */,
 				6B66CFE31F0D29310017B9B9 /* ViewController.m in Sources */,
+				6BB5C5F41F3829C6007E9F75 /* GestionSuccesseur.m in Sources */,
 				6BBD4B191F28AE1C00B606C1 /* Dates.cpp in Sources */,
 				6B8189111F1F8E900000423F /* Liens.m in Sources */,
 				6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */,

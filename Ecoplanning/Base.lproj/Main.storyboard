@@ -1117,7 +1117,7 @@
                                                 <rect key="frame" x="1" y="0.0" width="562" height="134"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Emn-eb-03C" id="XyO-W7-p07">
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Emn-eb-03C" id="XyO-W7-p07" customClass="GestionPredecesseur">
                                                         <rect key="frame" x="0.0" y="0.0" width="562" height="111"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -1252,7 +1252,7 @@
                                                 <rect key="frame" x="1" y="0.0" width="595" height="134"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="8LD-vu-J99" id="WAL-wJ-7yR">
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="8LD-vu-J99" id="WAL-wJ-7yR" customClass="GestionSuccesseur">
                                                         <rect key="frame" x="0.0" y="0.0" width="595" height="111"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -1500,12 +1500,36 @@
                     <connections>
                         <outlet property="arrayController" destination="Aih-eI-Ce1" id="aPG-1a-exo"/>
                         <outlet property="dureeprev" destination="rLb-q2-LMK" id="xcf-12-f99"/>
+                        <outlet property="predArray" destination="vZP-EK-9FC" id="tuP-Pj-lcS"/>
                         <outlet property="tableView" destination="DD2-bY-rhe" id="cMh-VE-bXG"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="FGY-qj-Kjs" customClass="ViewController"/>
-                <arrayController objectClassName="Tache" id="Aih-eI-Ce1"/>
+                <arrayController objectClassName="Tache" id="Aih-eI-Ce1">
+                    <declaredKeys>
+                        <string>check</string>
+                        <string>numero</string>
+                        <string>durpr</string>
+                        <string>debpr</string>
+                        <string>finpr</string>
+                        <string>debpr1</string>
+                        <string>finpr1</string>
+                        <string>mgt</string>
+                    </declaredKeys>
+                </arrayController>
+                <arrayController objectClassName="Predecesseur" automaticallyPreparesContent="YES" id="vZP-EK-9FC" userLabel="PredArray">
+                    <declaredKeys>
+                        <string>check</string>
+                        <string>numero</string>
+                        <string>designation</string>
+                        <string>durpr</string>
+                        <string>posdebpr</string>
+                        <string>lien</string>
+                        <string>decal</string>
+                        <string>mgt</string>
+                    </declaredKeys>
+                </arrayController>
             </objects>
             <point key="canvasLocation" x="2305.5" y="389.5"/>
         </scene>

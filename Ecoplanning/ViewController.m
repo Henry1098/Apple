@@ -10,6 +10,8 @@
 #import "Globals.h"
 #import "SeulementEntier.h"
 #import "GestionDates.h"
+#import "Predecesseur.h"
+#import "Tache.h"
 
 @implementation ViewController
 int nbreTaches;
@@ -23,6 +25,8 @@ NSMutableArray *tachescochees;
 GestionDates *gestion;
 static int counterliaison; // Compte les nombres des fois qu'une liaison est effectué
 NSMutableArray *array;
+Tache *tache; //pour inserer les taches
+NSMutableArray* touteslestaches;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,9 +47,15 @@ NSMutableArray *array;
     form = [[NSDateFormatter alloc]init];
     comp =[[NSDateComponents alloc]init];
     cal =[NSCalendar currentCalendar];
-    [form setDateFormat:@"dd/MM/yy"];    
+    [form setDateFormat:@"dd/MM/yy"];
     gestion = [[GestionDates alloc]init];
+    touteslestaches = [NSMutableArray array];
+
+
+
 }
+
+
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
@@ -66,19 +76,35 @@ NSMutableArray *array;
     if([event keyCode] == 0x22 && etatProjet == true)
     {
         
-        
-        
-        
-        dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
+        tache = [[Tache alloc]init];
 
-      
-        [_arrayController addObject:dict];
+
         
+        tache.check =[NSNumber numberWithBool:NO];
+        tache.numero =str;
+        tache.designation =str2;
+        tache.durpr =@"1";
+        tache.debpr =datedebutProjet;
+        tache.finpr=datefin;
+        tache.debpr1 =datedebutProjet;
+        tache.finpr1 =datefin;
+        tache.mgt =@"0";
+        
+        
+    /*    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
+
+      */
+        
+        
+        [_arrayController addObject:tache];
+        [tableView reloadData];
         [check setTag:i];
     
     
     nbreTaches = i;
-        i++;}
+        i++;
+        [touteslestaches addObject:tache];
+    }
 }
 
 
@@ -249,47 +275,16 @@ NSMutableArray *array;
 
 -(void)executerLiens
 {
-    counterliaison = gcounterliaison;
-    if(counterliaison ==1)
-    {
-       
-        for (int i = 0; i < [checkState count]; i++) {
-
-        if(i == 0)
-        {
-            
-            NSString * zero = [checkState objectAtIndex:0];
-            NSString *premier = [checkState objectAtIndex:1];
-            int zeroo = [zero intValue];
-            int premierr =[premier intValue];
-            NSString *finpr = [[[_arrayController arrangedObjects]objectAtIndex:0]valueForKey:@"finpr"];
-            NSDate *temp = [form dateFromString:finpr];
-            NSDate *final = [gestion calcdates:temp :2];
-            
-           NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:premierr]valueForKey:@"durpr"];
-            
-            int duree = [durpr intValue];
-            NSDate *tmp = [gestion calcdates:final :duree];
-            
-            
-           [[[_arrayController arrangedObjects]objectAtIndex:3] setValue:final forKey:@"debpr"];
-             [[[_arrayController arrangedObjects]objectAtIndex:[checkState objectAtIndex:1]]setValue:final forKey:@"debpr1"];
-            
-           [[[_arrayController arrangedObjects]objectAtIndex:3]setValue:tmp forKey:@"finpr"];
-            [[[_arrayController arrangedObjects]objectAtIndex:3]setValue:tmp forKey:@"finpr1"];
-            
-        }
-        }
-        
-        
-        
-        
-    }
-    
-    
-    
     
     
 }
 
+-(void) creerdesPredecesseurs
+{
+    Predecesseur *pred;
+    pred = [[Predecesseur alloc]init];
+    
+   // [pred creerPredecesseur:<#(NSDate *)#> :<#(NSString *)#> //:<#(NSMutableArray *)#> :<#(NSString *)#> :<#(NSString *)#> :<#(NSString *)#>]
+
+}
 @end
