@@ -55,18 +55,6 @@ NSMutableArray *array;
     NSLog(@"Hello");
 }
 
-- (IBAction)message:(id)sender {    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:[NSString stringWithFormat:@"%d",nbreTaches]];
-    [alert runModal];
-}
-- (IBAction)numberdisplay:(id)sender {
-   NSAlert * alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:@"datedebutProjet"];
-    [alert runModal];
-}
-
 -(void)keyDown:(NSEvent *)event
 {
      static int i = 1;
@@ -92,41 +80,13 @@ NSMutableArray *array;
     nbreTaches = i;
         i++;}
 }
-- (IBAction)bb:(id)sender {
-    [_arrayController removeObjectAtArrangedObjectIndex:3];
-    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",@"31",@"numero",@"Tachhen 3",@"designation",@"1",@"durpr",@"13/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr1",@"0",@"mgt", nil];
-    
-    [_arrayController insertObject:dict atArrangedObjectIndex:3];
-   NSString *str = [[[_arrayController arrangedObjects]objectAtIndex:4]valueForKey:@"designation"];
-[tableView reloadData];
-    
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:str];
-    [alert runModal];
 
-}
+
 -(BOOL)acceptsFirstResponder{
     return YES;
 }
 
 
-- (IBAction)foot:(id)sender {
-    BOOL etat;
-    
-    int selection = [tableView selectedRow];
-
-       etat = [[[_arrayController arrangedObjects]objectAtIndex:selection]valueForKey:@"check"];
-
-    NSString *str = [NSString stringWithFormat:@"%d",etat];
-    NSAlert *alert = [[NSAlert alloc]init];
-    [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:str];
-    [alert runModal];
-
-    
-
-}
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
     int row = [tableView selectedRow];

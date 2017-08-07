@@ -842,9 +842,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="message:" target="XfG-lQ-9wD" id="YxI-Ev-ApE"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m9C-eU-1Tf">
                                             <rect key="frame" x="855" y="673" width="167" height="32"/>
@@ -853,9 +850,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="bb:" target="XfG-lQ-9wD" id="bwx-Yc-43B"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XbI-Qu-pSN">
                                             <rect key="frame" x="1022" y="672" width="119" height="32"/>
@@ -872,9 +866,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="foot:" target="XfG-lQ-9wD" id="ba5-fF-xQa"/>
-                                            </connections>
                                         </button>
                                         <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stT-5F-JbT">
                                             <rect key="frame" x="17" y="529" width="1202" height="135"/>
@@ -1329,9 +1320,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="numberdisplay:" target="XfG-lQ-9wD" id="A0v-NL-bmc"/>
-                                            </connections>
                                         </button>
                                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrN-WH-EWY">
                                             <rect key="frame" x="137" y="17" width="1073" height="286"/>
