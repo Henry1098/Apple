@@ -26,9 +26,6 @@
     // Insert code here to tear down your application
 }
 
-- (IBAction)startNewProject:(id)sender {
-   
-}
 
 
 -(IBAction)NouveauProj:(id)sender{

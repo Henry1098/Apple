@@ -128,11 +128,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Projet" id="3pA-3y-wnv">
                                     <items>
-                                        <menuItem title="Résumé du projet" keyEquivalent="n" id="AcR-aB-SPb">
-                                            <connections>
-                                                <action selector="startNewProject:" target="Voe-Tx-rLC" id="Vd4-7J-OUe"/>
-                                            </connections>
-                                        </menuItem>
+                                        <menuItem title="Résumé du projet" keyEquivalent="n" id="AcR-aB-SPb"/>
                                         <menuItem title="Date de début du projet" keyEquivalent="o" id="oGZ-9R-QmM"/>
                                         <menuItem title="Calendrier" id="CXn-AZ-7jO">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -868,9 +864,6 @@
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
-                                            <connections>
-                                                <action selector="message3:" target="XfG-lQ-9wD" id="0xN-iJ-msc"/>
-                                            </connections>
                                         </button>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLt-aO-B4Y">
                                             <rect key="frame" x="1141" y="672" width="68" height="32"/>
@@ -1051,11 +1044,11 @@
                                                 </subviews>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Pyv-hi-wEA">
-                                                <rect key="frame" x="-7" y="8" width="0.0" height="15"/>
+                                                <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="RKD-VZ-DKp">
-                                                <rect key="frame" x="-14" y="16" width="15" height="0.0"/>
+                                                <rect key="frame" x="-15" y="23" width="16" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <tableHeaderView key="headerView" id="a0r-Ir-UKM">
@@ -1211,7 +1204,7 @@
                                                 </subviews>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="VgN-Cc-STT">
-                                                <rect key="frame" x="1" y="8" width="0.0" height="15"/>
+                                                <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="NBe-jh-o85">
@@ -1308,7 +1301,7 @@
                                                 </subviews>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="uwU-M4-hvj">
-                                                <rect key="frame" x="1" y="-15" width="0.0" height="15"/>
+                                                <rect key="frame" x="1" y="-16" width="0.0" height="16"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="abS-Tx-Ze8">

@@ -2,7 +2,7 @@
 //  NouveauProjet.h
 //  Ecoplanning
 //
-//  Created by Henry NZINGA on 19/07/2017.
+//  Created by Henry NZINGA on 07/08/2017.
 //  Copyright © 2017 Henry NZINGA. All rights reserved.
 //
 
@@ -10,11 +10,11 @@
 
 @interface NouveauProjet : NSWindowController
 {
+    __weak IBOutlet NSDatePicker *calendrier;
+    
     __weak IBOutlet NSTextField *dateD;
     
-    __weak IBOutlet NSDatePicker *calendrier;
     NSString *strDate;
+
 }
-- (IBAction)sauver:(id)sender;
--(void) setDateFin;
 @end

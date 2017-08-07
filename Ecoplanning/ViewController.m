@@ -9,18 +9,13 @@
 #import "ViewController.h"
 #import "Globals.h"
 #import "SeulementEntier.h"
-#import "Successeur.h"
-#import "Predecesseur.h"
 #import "GestionDates.h"
-#import "Tache.h"
 
 @implementation ViewController
 int nbreTaches;
 NSDate *datedebutProjet;
 NSDate *datefin;
 BOOL etatProjet;
-Successeur *successeur ;
-Predecesseur *predeccesseur;
 Globals *globals;
 LienTache lientache;
 NSMutableArray *array;
@@ -28,7 +23,7 @@ NSMutableArray *tachescochees;
 GestionDates *gestion;
 static int counterliaison; // Compte les nombres des fois qu'une liaison est effectué
 NSMutableArray *array;
-Tache *tache;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -36,7 +31,6 @@ Tache *tache;
     */
     
     tableView.delegate = self;
-    tache = [[Tache alloc]init];
     check.target = self;
     datum = datedebutProjet;
     etatProjet = false;
@@ -44,11 +38,7 @@ Tache *tache;
     array= [NSMutableArray array];
     globals = [[Globals alloc]init];
     checkState = [NSMutableArray array];
-    successeur = [[Successeur alloc]init];
     tachescochees = [NSMutableArray array];
-    [successeur initialize];
-    predeccesseur = [[Predecesseur alloc]init];
-    [predeccesseur initialize];
     [dureeprev setFormatter:entier];
     form = [[NSDateFormatter alloc]init];
     comp =[[NSDateComponents alloc]init];
@@ -89,15 +79,7 @@ Tache *tache;
     {
         
         
-        [tache.check addObject:[NSNumber numberWithBool:NO]];
-        [tache.numero addObject:str];
-        [tache.designation addObject:str2];
-        [tache.designation addObject:@"1"];
-        [tache.debpr addObject:datedebutProjet];
-        [tache.finpr addObject:datefin];
-        [tache.debpr1 addObject:datedebutProjet];
-        [tache.finpr1 addObject:datefin];
-        [tache.MgT addObject:@"0"];
+        
         
         dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
@@ -188,8 +170,7 @@ Tache *tache;
             
             NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
             
-            
-               [successeur ajouterSuccesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT:pPosDebpr];
+        
         }else{
             
             return;
@@ -227,9 +208,6 @@ Tache *tache;
             
             NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
             
-            [predeccesseur ajouterPredecesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT];
-            
-            /*     [successeur ajouterSuccesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT:pPosDebpr]; */
         }else{
             
             
@@ -242,8 +220,6 @@ Tache *tache;
             
             
             NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
-            
-            [predeccesseur ajouterPredecesseur:[NSString stringWithFormat:@"%d",nt] :[checkState objectAtIndex:j] :designation :duree :pPosDebpr :[globals renvoiLien] :@"0" :MgT];
             
         }
     }
