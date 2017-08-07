@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "ViewController.h"
 @class NouveauProjet;
 @class Liens;
 
@@ -15,6 +15,7 @@
 {
 NouveauProjet *projet;
 Liens *lier;
+     ViewController *view;
 }
 
 @end

@@ -15,11 +15,10 @@
 @end
 
 @implementation AppDelegate
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
-    }
+    view = [[ViewController alloc]init];
+}
 
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -42,7 +41,9 @@
         lier = [[Liens alloc]initWithWindowNibName:@"Lien"];
     }
     [lier showWindow:self];
+    [view executerLiens];
+    
 }
 
 
-@end
+    @end

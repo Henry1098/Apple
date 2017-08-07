@@ -26,7 +26,6 @@ GestionDates *gestion;
 static int counterliaison; // Compte les nombres des fois qu'une liaison est effectué
 NSMutableArray *array;
 Tache *tache; //pour inserer les taches
-NSMutableArray* touteslestaches;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -51,7 +50,7 @@ NSMutableArray* touteslestaches;
     gestion = [[GestionDates alloc]init];
     touteslestaches = [NSMutableArray array];
 
-
+    
 
 }
 
@@ -94,17 +93,18 @@ NSMutableArray* touteslestaches;
     /*    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
       */
-        
-        
-        [_arrayController addObject:tache];
-        [tableView reloadData];
+        [touteslestaches addObject:tache];
+    [_arrayController addObject:tache];
+    [tableView reloadData];
         [check setTag:i];
     
     
     nbreTaches = i;
         i++;
-        [touteslestaches addObject:tache];
-    }
+       
+        
+        
+          }
 }
 
 
@@ -275,9 +275,32 @@ NSMutableArray* touteslestaches;
 
 -(void)executerLiens
 {
+    int nt;
+     int nt2 = 0;
+    NSDate *date;
+    NSString *fin = [NSString string];
+    NSString *datefinx;
+    for (int i=0; i< [array count]; i++) {
+        nt = [array objectAtIndex:i];
+        
+        if(nt< (int)[array count])
+            nt2=[[array objectAtIndex:i+1]intValue];
+        
+        datefinx =  [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
+        
+        date =[form dateFromString:datefin];
+        
+        date =[gestion calcdates:date :2];
+        
+        fin = [form stringFromDate:date];
+        [[[_arrayController arrangedObjects]objectAtIndex:nt2]setValue:fin forKey:@"debpr"];
+    }
+    
+    NSLog(@"Execution terminée %@",datefinx);
     
     
 }
+
 
 -(void) creerdesPredecesseurs
 {

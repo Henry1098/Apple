@@ -22,6 +22,9 @@
     IBOutlet NSArrayController *predArray;
     NSDateComponents * comp;
     NSCalendar *cal;
+    NSMutableArray *touteslestaches;
+    NSMutableArray *touteslespred;
+    NSMutableArray *touteslessucc;
     
 }
 
