@@ -26,11 +26,12 @@
     NSMutableArray *touteslespred;
     NSMutableArray *touteslessucc;
     
+    __weak IBOutlet NSTableView *predTable;
 }
 
 - (IBAction)bre:(id)sender;
 
-- (IBAction)checkded:(NSButton *)sender;
+- (IBAction)checkded:(id)sender;
 
 - (void)calculduree2:(int)number:(int)Row;
 //@property (weak) IBOutlet Ordonnancement *tableView;

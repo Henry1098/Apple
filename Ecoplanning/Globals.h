@@ -10,6 +10,8 @@
 
 @interface Globals : NSObject
 
++(NSString *)renvoiLien;
+
 typedef struct{
     BOOL FD;
     BOOL FF;
@@ -28,6 +30,5 @@ typedef struct{
     extern NSMutableArray *tachescochees;
     extern  int gcounterliaison;
 
-    -(NSString *)renvoiLien;
 
 @end

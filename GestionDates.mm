@@ -15,8 +15,10 @@
 {
     time_t datee = (time_t) [datum timeIntervalSince1970];
     Dates *dateeco = new Dates();
-    NSDate *fin = [NSDate dateWithTimeIntervalSince1970:dateeco->calculdates(datee, jour)];
-    
+    time_t  date = dateeco->calculdates(datee, jour);
+    NSDate *fin = [NSDate dateWithTimeIntervalSince1970:date];
+    NSDateFormatter * form;
+    [form setDateFormat:@"dd/MM/yy"];
     return fin;
 }
 @end

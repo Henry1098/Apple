@@ -19,13 +19,14 @@ NSDate *datedebutProjet;
 NSDate *datefin;
 BOOL etatProjet;
 Globals *globals;
-LienTache lientache;
 NSMutableArray *array;
 NSMutableArray *tachescochees;
 GestionDates *gestion;
 static int counterliaison; // Compte les nombres des fois qu'une liaison est effectué
 NSMutableArray *array;
 Tache *tache; //pour inserer les taches
+BOOL liaison;
+Predecesseur *pred;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +35,8 @@ Tache *tache; //pour inserer les taches
     */
     
     tableView.delegate = self;
+    predTable.delegate = self;
+    tableView.action = @selector(selectionRow:);
     check.target = self;
     datum = datedebutProjet;
     etatProjet = false;
@@ -49,9 +52,13 @@ Tache *tache; //pour inserer les taches
     [form setDateFormat:@"dd/MM/yy"];
     gestion = [[GestionDates alloc]init];
     touteslestaches = [NSMutableArray array];
+    liaison = NO;
+    pred = [[Predecesseur alloc]init];
 
+}
+- (IBAction)chelien:(id)sender {
     
-
+    [self executerLiens];
 }
 
 
@@ -122,109 +129,27 @@ Tache *tache; //pour inserer les taches
 
 - (IBAction)bre:(id)sender {
 
-    [self lierVersionUnPred];
-    [self lierVersionUnSucc];
+
 
 }
 
--(void)lierVersionUnSucc
-{
-    tachescochees =  checkState;
-    lientache.FD = YES;
-    int j = 0;
-    int nt = 0;
-    static int counter;
-    counter = (int)checkState.count;
-    for(int i= 0;i <counter;i++){
-        if(i==(int)checkState.count)
-        {
-            return;
-        }
-        if(i!=(int)checkState.count){
-            nt = [[checkState objectAtIndex:i+1]intValue];}
-        
-        
-        if(nt != [[checkState lastObject]intValue]){
-            
-            NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
-            
-            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
-            
-            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
-            
-            
-            
-            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
-            
-        
-        }else{
-            
-            return;
-        }
-    }
-    
-}
--(void)lierVersionUnPred
-{
-    
-    tachescochees =  checkState;
-    lientache.FD = YES;
-    int j = 0;
-    int nt = 0;
-    static int counter;
-    counter = (int)checkState.count;
-    for(int i= 0;i <counter;i++){
-        if(i==0)
-        {
-            nt = [[checkState objectAtIndex:i]intValue];
-        }
-        if(i!=0){
-            nt = [[checkState objectAtIndex:i-1]intValue];}
-        
-        
-        if(nt != [[checkState firstObject]intValue]){
-            
-            NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
-            
-            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
-            
-            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
-            
-            
-            
-            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
-            
-        }else{
-            
-            
-            NSString *designation= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"designation"];
-            
-            NSString *duree= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"durpr"];
-            
-            NSString *pPosDebpr= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
-            
-            
-            
-            NSString *MgT= [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"mgt"];
-            
-        }
-    }
-}
-- (IBAction)checkded:(NSButton *)sender {
-    int Row = [tableView selectedRow];
+
+
+- (IBAction)checkded:(id)sender {
+NSInteger Row = [tableView selectedRow];
     NSString *check = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"check"];
     int checkd = [NSString stringWithFormat:@"%@",check];
     
    NSString *str= [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"numero"];
     if(checkd == 12565)
     {
-        NSLog(@"Yep tu as coché la tâche numéro %d",Row);
+        NSLog(@"Yep tu as coché la tâche numéro %ld",(long)Row);
         [array addObject:str];
     }
     if(checkd == 12309)
     {
-        NSLog(@"Bouh, tu viens de décocher la tâche numéro %d", Row);
-        [array removeObject:str];
+        NSLog(@"Bouh, tu viens de décocher la tâche numéro %ld", (long)Row);
+         [array removeObject:str];
         
     }
     
@@ -280,26 +205,48 @@ Tache *tache; //pour inserer les taches
     NSDate *date;
     NSString *fin = [NSString string];
     NSString *datefinx;
-    for (int i=0; i< [array count]; i++) {
-        nt = [array objectAtIndex:i];
-        
-        if(nt< (int)[array count])
-            nt2=[[array objectAtIndex:i+1]intValue];
-        
-        datefinx =  [[[_arrayController arrangedObjects]objectAtIndex:nt]valueForKey:@"finpr"];
-        
-        date =[form dateFromString:datefin];
-        
-        date =[gestion calcdates:date :2];
-        
-        fin = [form stringFromDate:date];
-        [[[_arrayController arrangedObjects]objectAtIndex:nt2]setValue:fin forKey:@"debpr"];
-    }
+    const int counter = (int)[checkState count ] ;
+    liaison = YES;
     
-    NSLog(@"Execution terminée %@",datefinx);
+    for (int i=0; i<[checkState count]; i++) {
+    
+    int nt1 =     [[array objectAtIndex:i]intValue];
+        NSLog(@"Execution terminée %d",nt1);
+        if(nt1 == 1){
+          NSString *finpr = [[[_arrayController arrangedObjects]objectAtIndex:nt1]valueForKey:@"finpr"];
+        
+           date= [gestion calcdates:[form dateFromString:finpr] :2];
+        }else{
+                
+                NSString *finpr = [[[_arrayController arrangedObjects]objectAtIndex:nt1]valueForKey:@"finpr"];
+                
+                 NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:nt1]valueForKey:@"durpr"];
+                [form setDateFormat:@"dd/MM/yy"];
+                date= [gestion calcdates:[form dateFromString:finpr] :2];
+            [form setDateFormat:@"dd/MM/yy"];
+              fin = [gestion calcdates:date:2];
+            
+            
+            [[[_arrayController arrangedObjects]objectAtIndex:nt1]setValue: date forKey:@"finpr"];
+                
+                
+                
+            }
+        if(i<[array count]-1){
+     int d = [[array objectAtIndex:i+1]intValue];
+            
+               [[[_arrayController arrangedObjects]objectAtIndex:d]setValue:date forKey:@"debpr"];
+            
+            
+        NSLog(@"Execution i %d",d);
+        }
+
+    
+    }}
+  
     
     
-}
+
 
 
 -(void) creerdesPredecesseurs
@@ -310,4 +257,36 @@ Tache *tache; //pour inserer les taches
    // [pred creerPredecesseur:<#(NSDate *)#> :<#(NSString *)#> //:<#(NSMutableArray *)#> :<#(NSString *)#> :<#(NSString *)#> :<#(NSString *)#>]
 
 }
+
+-(void)selectionRow:(id)sender
+{
+    int row = [tableView selectedRow];
+    int j,k,l;
+    
+    for (j = 0; j < [array count]; j++) {
+        k = [[array objectAtIndex:j]intValue];
+         NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:k]valueForKey:@"durpr"];
+        if(j < [array count] && k != [[array firstObject]intValue])
+        l = [[array objectAtIndex:j-1]intValue];
+        NSString* m = [NSString stringWithFormat:@"%d",l];
+        k-=1;
+        NSString * n = @"Tache ";
+        NSString *o = [n stringByAppendingString:m];
+        NSString * p = [NSString stringWithFormat:@"%d",l];
+        if (liaison == YES && row ==k ) {
+            NSLog(@"%d",row);
+            
+            NSDate *now =[form dateFromString:@"12/01/17"];
+           pred= [pred creerPredecesseur:now:p :array :o :durpr :@"0"];
+            [touteslespred addObject:pred];
+            [predArray addObject:pred];
+            [predTable reloadData];
+        }
+    }
+    
+    
+    
+}
+
+
 @end

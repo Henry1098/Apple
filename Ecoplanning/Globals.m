@@ -10,7 +10,7 @@
 
 @implementation Globals
 
--(NSString *)renvoiLien
++(NSString *)renvoiLien
 {
     NSString *lien;
   if(lientache.DD == YES)
