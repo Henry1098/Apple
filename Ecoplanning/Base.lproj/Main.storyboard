@@ -719,7 +719,7 @@
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <tabView key="view" id="Zm3-ML-2kT">
                         <rect key="frame" x="0.0" y="0.0" width="1457" height="763"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Ordonnancement" identifier="1" id="kki-DM-mJg">
@@ -1282,7 +1282,7 @@
                                                 <rect key="frame" x="1" y="0.0" width="595" height="134"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="8LD-vu-J99" id="WAL-wJ-7yR" customClass="GestionSuccesseur">
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="8LD-vu-J99" id="WAL-wJ-7yR">
                                                         <rect key="frame" x="0.0" y="0.0" width="595" height="111"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -1301,6 +1301,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.check" id="nVY-wg-glW"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="numero" width="40" minWidth="40" maxWidth="1000" id="nRW-DF-UoQ">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="No">
@@ -1314,6 +1317,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.numero" id="vMV-9O-Dwe"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="designation" width="73.5" minWidth="40" maxWidth="1000" id="DYA-lD-9oJ">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Designation">
@@ -1327,6 +1333,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.designation" id="bqg-TN-cBW"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="durpr" width="51" minWidth="40" maxWidth="1000" id="Har-vT-gZO">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Durpr">
@@ -1340,6 +1349,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.durpr" id="7v4-6M-TqF"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="debtot" width="84.5" minWidth="40" maxWidth="1000" id="xUx-8L-Pkj">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Deb+Tot">
@@ -1353,6 +1365,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.debtot" id="LwJ-Fx-CoG"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="lien" width="66.5" minWidth="40" maxWidth="1000" id="bsD-rC-slA">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Lien">
@@ -1366,6 +1381,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.lien" id="R5J-0x-4GW"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="decal" width="48" minWidth="40" maxWidth="560" id="dZ2-8A-VB9">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Décal">
@@ -1379,6 +1397,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.decal" id="QcK-ec-Hsa"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="mgt" width="45.5" minWidth="40" maxWidth="1000" id="Az5-HR-jZz">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="MgT">
@@ -1392,6 +1413,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.mgt" id="9kl-Xa-ec5"/>
+                                                                </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="debavtache" width="119" minWidth="40" maxWidth="1000" id="gIZ-gN-ofV">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Deb av Tache">
@@ -1405,6 +1429,9 @@
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                                <connections>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.debavtache" id="UDc-OG-og3"/>
+                                                                </connections>
                                                             </tableColumn>
                                                         </tableColumns>
                                                     </tableView>
@@ -1440,11 +1467,6 @@
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                         </button>
-                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VrN-WH-EWY">
-                                            <rect key="frame" x="137" y="17" width="1073" height="286"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="afw-dC-WAl"/>
-                                        </imageView>
                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q4r-I8-RIP">
                                             <rect key="frame" x="1022" y="672" width="119" height="32"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1456,6 +1478,10 @@
                                                 <action selector="bre:" target="XfG-lQ-9wD" id="mfg-cX-veO"/>
                                             </connections>
                                         </button>
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZQ-nv-48n" customClass="Gantt">
+                                            <rect key="frame" x="137" y="17" width="1073" height="286"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        </customView>
                                     </subviews>
                                 </view>
                             </tabViewItem>
@@ -1528,6 +1554,8 @@
                         </tabViewItems>
                     </tabView>
                     <connections>
+                        <outlet property="SuccArray" destination="XVl-4G-pjI" id="Ges-Bw-1Lf"/>
+                        <outlet property="SuccTable" destination="WAL-wJ-7yR" id="X66-YF-kz3"/>
                         <outlet property="arrayController" destination="Aih-eI-Ce1" id="aPG-1a-exo"/>
                         <outlet property="dureeprev" destination="rLb-q2-LMK" id="xcf-12-f99"/>
                         <outlet property="predArray" destination="vZP-EK-9FC" id="XIJ-FV-jHi"/>
@@ -1562,6 +1590,22 @@
                     </declaredKeys>
                     <connections>
                         <binding destination="FGY-qj-Kjs" name="contentArray" keyPath="touteslespred" id="aLc-2e-ctI"/>
+                    </connections>
+                </arrayController>
+                <arrayController objectClassName="Successeur" id="XVl-4G-pjI" userLabel="SuccArray">
+                    <declaredKeys>
+                        <string>check</string>
+                        <string>numero</string>
+                        <string>designation</string>
+                        <string>durpr</string>
+                        <string>debtot</string>
+                        <string>lien</string>
+                        <string>decal</string>
+                        <string>mgt</string>
+                        <string>debavtache</string>
+                    </declaredKeys>
+                    <connections>
+                        <binding destination="vZP-EK-9FC" name="contentArray" keyPath="selection.touteslessucc" id="tdh-a1-8Bg"/>
                     </connections>
                 </arrayController>
             </objects>

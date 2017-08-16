@@ -10,16 +10,17 @@
 
 @interface Successeur : NSObject
 {
-    NSMutableArray* check;
-    NSMutableArray* numero;
-    NSMutableArray* designation;
-    NSMutableArray* durpr;
-    NSMutableArray* debtot;
-    NSMutableArray* lien;
-    NSMutableArray* decal;
-    NSMutableArray* mgt;
-    NSMutableArray* debavtache;
+    NSString* check;
+    NSString* numero;
+    NSString* designation;
+    NSString* durpr;
+    NSString* debtot;
+    NSString* lien;
+    NSString* decal;
+    NSString* mgt;
+    NSString* debavtache;
 }
-@property (copy) NSMutableArray* check,*numero, *designation, *durpr, *debtot,*lien,*decal, *mgt,*devavtache;
-
+@property (copy) NSString* check,*numero, *designation, *durpr, *debtot,*lien,*decal, *mgt,*devavtache;
+-(Successeur *)creerSuccesseur:(NSDate *) date:(int) i:(NSMutableArray *) array:(NSString *) designation:(int) durpr:(int) mgt;
+-(NSString *)verifLien;
 @end

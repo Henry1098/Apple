@@ -17,8 +17,10 @@
     NSString *cell;
     NSDate *datum;
     __weak IBOutlet NSTextFieldCell *dureeprev;
+    __weak IBOutlet NSTableView *SuccTable;
     NSDateFormatter *form;
     
+    IBOutlet NSArrayController *SuccArray;
     IBOutlet NSArrayController *predArray;
     NSDateComponents * comp;
     NSCalendar *cal;
@@ -41,5 +43,8 @@
 - (void)calculduree;
 -(void)lierVersionUnPred;
 -(void)lierVersionUnSucc;
+-(void)donneesgantt:(NSString *)designation:(int) decalage:(NSString *)lien;
+-(void)dessinergantt1:(NSString *)designation;
+-(void)dessinergantt2:(NSString *)designation:(int)decalage:(NSString *)lien;
 @end
 

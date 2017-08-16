@@ -29,6 +29,6 @@ typedef struct{
     extern LienTache lientache;
     extern NSMutableArray *tachescochees;
     extern  int gcounterliaison;
-
+extern BOOL liaisontaches;
 
 @end

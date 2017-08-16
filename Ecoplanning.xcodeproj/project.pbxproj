@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B12FC911F44617000A2BA0F /* Gantt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12FC901F44617000A2BA0F /* Gantt.m */; };
 		6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */; };
 		6B66CFE01F0D29310017B9B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFDF1F0D29310017B9B9 /* main.m */; };
 		6B66CFE31F0D29310017B9B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFE21F0D29310017B9B9 /* ViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B12FC8F1F44617000A2BA0F /* Gantt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gantt.h; sourceTree = "<group>"; };
+		6B12FC901F44617000A2BA0F /* Gantt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gantt.m; sourceTree = "<group>"; };
 		6B66CFD81F0D29310017B9B9 /* Ecoplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecoplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B66CFDB1F0D29310017B9B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				6BB5C5EF1F38255F007E9F75 /* GestionPredecesseur.h */,
 				6BB5C5F01F38255F007E9F75 /* GestionPredecesseur.m */,
 				6BB5C5F21F3829C6007E9F75 /* GestionSuccesseur.h */,
+				6B12FC8F1F44617000A2BA0F /* Gantt.h */,
+				6B12FC901F44617000A2BA0F /* Gantt.m */,
 				6BB5C5F31F3829C6007E9F75 /* GestionSuccesseur.m */,
 				6BB5C5F51F3829D4007E9F75 /* Successeur.h */,
 				6BB5C5F61F3829D4007E9F75 /* Successeur.m */,
@@ -341,6 +346,7 @@
 				6BB5C5F41F3829C6007E9F75 /* GestionSuccesseur.m in Sources */,
 				6BBD4B191F28AE1C00B606C1 /* Dates.cpp in Sources */,
 				6B8189111F1F8E900000423F /* Liens.m in Sources */,
+				6B12FC911F44617000A2BA0F /* Gantt.m in Sources */,
 				6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */,
 				6B66CFE01F0D29310017B9B9 /* main.m in Sources */,
 				6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */,

@@ -11,6 +11,7 @@
 #import "SeulementEntier.h"
 #import "GestionDates.h"
 #import "Predecesseur.h"
+#import "Successeur.h"
 #import "Tache.h"
 
 @implementation ViewController
@@ -27,6 +28,7 @@ NSMutableArray *array;
 Tache *tache; //pour inserer les taches
 BOOL liaison;
 Predecesseur *pred;
+Successeur *succ;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,6 +38,7 @@ Predecesseur *pred;
     
     tableView.delegate = self;
     predTable.delegate = self;
+    SuccTable.delegate = self;
     tableView.action = @selector(selectionRow:);
     check.target = self;
     datum = datedebutProjet;
@@ -52,9 +55,10 @@ Predecesseur *pred;
     [form setDateFormat:@"dd/MM/yy"];
     gestion = [[GestionDates alloc]init];
     touteslestaches = [NSMutableArray array];
+    touteslessucc = [NSMutableArray array];
     liaison = NO;
     pred = [[Predecesseur alloc]init];
-
+    succ = [[Successeur alloc]init];
 }
 - (IBAction)chelien:(id)sender {
     
@@ -261,7 +265,7 @@ NSInteger Row = [tableView selectedRow];
 -(void)selectionRow:(id)sender
 {
     int row = [tableView selectedRow];
-    int j,k,l;
+    int j,k,l,r,s,t = 0,u,v = 0;
     
     for (j = 0; j < [array count]; j++) {
         k = [[array objectAtIndex:j]intValue];
@@ -278,15 +282,65 @@ NSInteger Row = [tableView selectedRow];
             
             NSDate *now =[form dateFromString:@"12/01/17"];
            pred= [pred creerPredecesseur:now:p :array :o :durpr :@"0"];
-            [touteslespred addObject:pred];
+          //  [touteslespred addObject:pred];
             [predArray addObject:pred];
             [predTable reloadData];
         }
     }
     
     
+    for (r = 0; r< [array count];r++) {
+        s = [[array objectAtIndex:r]intValue];
+        NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:s]valueForKey:@"durpr"];
+        if(t < [array count] && s != [[array firstObject]intValue])
+            v = [[array objectAtIndex:r+1]intValue];
+        NSString*w = [NSString stringWithFormat:@"%d",v];
+        s-=1;
+        NSString * x = @"Tache ";
+        NSString *y = [x stringByAppendingString:w];
+        NSString * z = [NSString stringWithFormat:@"%d",v];
+        if (liaison == YES && row ==s ) {
+            NSLog(@"%d",row);
+            
+            NSDate *now =[form dateFromString:@"12/01/17"];
+            succ= [succ creerSuccesseur:now:z :array :y :durpr :@"0"];
+             [touteslessucc addObject:succ];
+            [SuccArray addObject:succ];
+            [SuccTable reloadData];
+        }
+
+    }
+    
+}
+-(void)donneesgantt:(NSString *)designation:(int) decalage:(NSString *)lien
+{
+   if(liaison == NO)
+   {
+       
+       [self dessinergantt1:designation];
+       
+   }else{
+       
+       [self dessinergantt2:designation :decalage :lien];
+   }
+    
+    
+}
+
+//Gantt avant liaison des tâches
+-(void)dessinergantt1:(NSString *)designation{
+    
+    
+    
+    
+    
     
 }
 
 
+// Gantt après liaison des tâches
+-(void)dessinergantt2:(NSString *)designation :(int)decalage :(NSString *)lien
+{
+    
+}
 @end
