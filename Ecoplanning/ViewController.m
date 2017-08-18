@@ -148,6 +148,7 @@ NSInteger Row = [tableView selectedRow];
     int checkd = [NSString stringWithFormat:@"%@",check];
     
    NSString *str= [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"numero"];
+   
     if(checkd == 12565)
     {
         NSLog(@"Yep tu as coché la tâche numéro %ld",(long)Row);
@@ -234,7 +235,7 @@ NSInteger Row = [tableView selectedRow];
               fin = [gestion calcdates:date:2];
             
             
-            [[[_arrayController arrangedObjects]objectAtIndex:nt1]setValue: date forKey:@"finpr"];
+            [[[_arrayController arrangedObjects]objectAtIndex:nt1-1]setValue: date forKey:@"finpr"];
                 
                 
                 
@@ -242,7 +243,7 @@ NSInteger Row = [tableView selectedRow];
         if(i<[array count]-1){
      int d = [[array objectAtIndex:i+1]intValue];
             
-               [[[_arrayController arrangedObjects]objectAtIndex:d]setValue:date forKey:@"debpr"];
+               [[[_arrayController arrangedObjects]objectAtIndex:d-1]setValue:date forKey:@"debpr"];
             
             
         NSLog(@"Execution i %d",d);
@@ -276,7 +277,7 @@ NSInteger Row = [tableView selectedRow];
     
     NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
     
-    dureeglobale= [durpr intValue];
+    dureeglobale= [durpr intValue]+2;
     
     selectiontache = YES;
     gantt.needsDisplay = YES;
