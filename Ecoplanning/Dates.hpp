@@ -16,7 +16,7 @@ class Dates
 {
 public:
     time_t calculdates(time_t date, int jours);
-
+    int retourweekday(time_t dates);
 };
 
 

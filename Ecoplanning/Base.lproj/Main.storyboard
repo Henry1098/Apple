@@ -1558,6 +1558,7 @@
                         <outlet property="SuccTable" destination="WAL-wJ-7yR" id="X66-YF-kz3"/>
                         <outlet property="arrayController" destination="Aih-eI-Ce1" id="aPG-1a-exo"/>
                         <outlet property="dureeprev" destination="rLb-q2-LMK" id="xcf-12-f99"/>
+                        <outlet property="gantt" destination="PZQ-nv-48n" id="HDj-J9-OIo"/>
                         <outlet property="predArray" destination="vZP-EK-9FC" id="XIJ-FV-jHi"/>
                         <outlet property="predTable" destination="XyO-W7-p07" id="hic-gG-SKr"/>
                         <outlet property="tableView" destination="DD2-bY-rhe" id="cMh-VE-bXG"/>

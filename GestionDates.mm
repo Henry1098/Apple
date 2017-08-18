@@ -21,4 +21,13 @@
     [form setDateFormat:@"dd/MM/yy"];
     return fin;
 }
+
+-(int)weekday:(NSDate *)date
+{
+    time_t datee = (time_t) [date timeIntervalSince1970];
+    Dates *dateeco = new Dates();
+    int weekday = dateeco->retourweekday(datee);
+    return weekday;
+    
+}
 @end

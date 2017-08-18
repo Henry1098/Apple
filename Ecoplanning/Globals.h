@@ -30,5 +30,7 @@ typedef struct{
     extern NSMutableArray *tachescochees;
     extern  int gcounterliaison;
 extern BOOL liaisontaches;
+extern int dureeglobale;
+extern BOOL selectiontache;
 
 @end

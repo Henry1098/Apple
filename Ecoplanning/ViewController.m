@@ -13,6 +13,7 @@
 #import "Predecesseur.h"
 #import "Successeur.h"
 #import "Tache.h"
+#import "Gantt.h"
 
 @implementation ViewController
 int nbreTaches;
@@ -29,6 +30,9 @@ Tache *tache; //pour inserer les taches
 BOOL liaison;
 Predecesseur *pred;
 Successeur *succ;
+
+int dureeglobale;
+BOOL selectiontache;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,8 +62,7 @@ Successeur *succ;
     touteslessucc = [NSMutableArray array];
     liaison = NO;
     pred = [[Predecesseur alloc]init];
-    succ = [[Successeur alloc]init];
-}
+    succ = [[Successeur alloc]init];}
 - (IBAction)chelien:(id)sender {
     
     [self executerLiens];
@@ -264,8 +267,21 @@ NSInteger Row = [tableView selectedRow];
 
 -(void)selectionRow:(id)sender
 {
+    
+    
+    
+    
+    
     int row = [tableView selectedRow];
+    
+    NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
+    
+    dureeglobale= [durpr intValue];
+    
+    selectiontache = YES;
+    gantt.needsDisplay = YES;
     int j,k,l,r,s,t = 0,u,v = 0;
+    
     
     for (j = 0; j < [array count]; j++) {
         k = [[array objectAtIndex:j]intValue];

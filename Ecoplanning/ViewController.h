@@ -28,6 +28,7 @@
     NSMutableArray *touteslespred;
     NSMutableArray *touteslessucc;
     
+    __weak IBOutlet NSView *gantt;
     __weak IBOutlet NSTableView *predTable;
 }
 

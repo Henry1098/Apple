@@ -9,6 +9,20 @@
 #include "Dates.hpp"
 #include <math.h>
 
+int Dates::retourweekday(time_t date)
+{
+    char timebuffer[64];
+    struct tm *datel = localtime(&date);
+    int weekday = 0;
+    mktime(datel);
+    if (strftime(timebuffer, sizeof(timebuffer), "%w", datel)) {
+        sscanf(timebuffer, "%d",&weekday);
+        
+    }
+    
+    return weekday;
+}
+
 time_t Dates::calculdates(time_t date, int jours)
 {
     time_t fin = 0;
@@ -43,7 +57,7 @@ time_t Dates::calculdates(time_t date, int jours)
                 break;
             case 3:
                 datum->tm_mday+=1;
-                if(datum->tm_wday ==6)
+            if(datum->tm_wday ==6)
                 {
                     datum->tm_mday+=4;
                     strftime(buffer, 80, "%e/%m/%y",datum);

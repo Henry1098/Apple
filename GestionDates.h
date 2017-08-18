@@ -10,5 +10,6 @@
 
 @interface GestionDates : NSObject
 -(NSDate *)calcdates:(NSDate *) datum:(int) jour;
+-(int)weekday:(NSDate *)date;
 
 @end
