@@ -45,7 +45,8 @@
 -(void)lierVersionUnPred;
 -(void)lierVersionUnSucc;
 -(void)donneesgantt:(NSString *)designation:(int) decalage:(NSString *)lien;
--(void)dessinergantt1:(NSString *)designation;
+-(void)dessinergantt1:(int)row;
 -(void)dessinergantt2:(NSString *)designation:(int)decalage:(NSString *)lien;
+
 @end
 

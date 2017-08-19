@@ -17,6 +17,8 @@
 		6B66CFFE1F0D29310017B9B9 /* EcoplanningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFFD1F0D29310017B9B9 /* EcoplanningUITests.m */; };
 		6B8189111F1F8E900000423F /* Liens.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B81890F1F1F8E900000423F /* Liens.m */; };
 		6B8798A21F1D1B4B0017E327 /* Lien.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8798A11F1D1B4B0017E327 /* Lien.xib */; };
+		6B938C951F483152008B61D4 /* Pred.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B938C941F483152008B61D4 /* Pred.m */; };
+		6B938C981F4836FB008B61D4 /* SuccesseurTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B938C971F4836FB008B61D4 /* SuccesseurTable.m */; };
 		6BB5C5BF1F37F973007E9F75 /* NouveauProjet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5C5BE1F37F973007E9F75 /* NouveauProjet.xib */; };
 		6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5C11F37FA3D007E9F75 /* NouveauProjet.m */; };
 		6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5ED1F3824EB007E9F75 /* Predecesseur.m */; };
@@ -68,6 +70,10 @@
 		6B81890E1F1F8E900000423F /* Liens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Liens.h; sourceTree = "<group>"; };
 		6B81890F1F1F8E900000423F /* Liens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Liens.m; sourceTree = "<group>"; };
 		6B8798A11F1D1B4B0017E327 /* Lien.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Lien.xib; sourceTree = "<group>"; };
+		6B938C931F483152008B61D4 /* Pred.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pred.h; sourceTree = "<group>"; };
+		6B938C941F483152008B61D4 /* Pred.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pred.m; sourceTree = "<group>"; };
+		6B938C961F4836FB008B61D4 /* SuccesseurTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccesseurTable.h; sourceTree = "<group>"; };
+		6B938C971F4836FB008B61D4 /* SuccesseurTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccesseurTable.m; sourceTree = "<group>"; };
 		6BB5C5BE1F37F973007E9F75 /* NouveauProjet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NouveauProjet.xib; sourceTree = "<group>"; };
 		6BB5C5C01F37FA3D007E9F75 /* NouveauProjet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NouveauProjet.h; sourceTree = "<group>"; };
 		6BB5C5C11F37FA3D007E9F75 /* NouveauProjet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NouveauProjet.m; sourceTree = "<group>"; };
@@ -146,6 +152,10 @@
 				6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */,
 				6B66CFE11F0D29310017B9B9 /* ViewController.h */,
 				6B66CFE21F0D29310017B9B9 /* ViewController.m */,
+				6B938C931F483152008B61D4 /* Pred.h */,
+				6B938C941F483152008B61D4 /* Pred.m */,
+				6B938C961F4836FB008B61D4 /* SuccesseurTable.h */,
+				6B938C971F4836FB008B61D4 /* SuccesseurTable.m */,
 				6BB5C5F81F385D3A007E9F75 /* Tache.h */,
 				6BB5C5F91F385D3A007E9F75 /* Tache.m */,
 				6BB5C5EC1F3824EB007E9F75 /* Predecesseur.h */,
@@ -348,7 +358,9 @@
 				6B8189111F1F8E900000423F /* Liens.m in Sources */,
 				6B12FC911F44617000A2BA0F /* Gantt.m in Sources */,
 				6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */,
+				6B938C981F4836FB008B61D4 /* SuccesseurTable.m in Sources */,
 				6B66CFE01F0D29310017B9B9 /* main.m in Sources */,
+				6B938C951F483152008B61D4 /* Pred.m in Sources */,
 				6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */,
 				6BBD4B1C1F28B59700B606C1 /* GestionDates.mm in Sources */,
 				6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */,

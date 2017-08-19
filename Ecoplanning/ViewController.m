@@ -130,8 +130,11 @@ BOOL selectiontache;
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
     int row = [tableView selectedRow];
+  
+   
     
     [self calculduree2:4:row];
+    [self dessinergantt1:row];
 }
 
 - (IBAction)bre:(id)sender {
@@ -176,6 +179,7 @@ NSInteger Row = [tableView selectedRow];
 
 -(void)calculduree2:(int)number:(int)Row
 {
+    
     int row = [tableView selectedRow];
     NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:Row]valueForKey:@"durpr"];
     NSDate *fin;
@@ -198,7 +202,9 @@ NSInteger Row = [tableView selectedRow];
            
            [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:fin forKey:@"finpr"];
            
-           NSLog(@"%@",fin);
+           
+           
+                      NSLog(@"%@",fin);
            
        break;     }
     
@@ -234,16 +240,18 @@ NSInteger Row = [tableView selectedRow];
             [form setDateFormat:@"dd/MM/yy"];
               fin = [gestion calcdates:date:2];
             
-            
-            [[[_arrayController arrangedObjects]objectAtIndex:nt1-1]setValue: date forKey:@"finpr"];
+            [form setDateFormat:@"dd/MM/yy"];
+
+            [[[_arrayController arrangedObjects]objectAtIndex:nt1-1]setValue:[form stringFromDate:date] forKey:@"finpr"];
                 
                 
                 
             }
         if(i<[array count]-1){
      int d = [[array objectAtIndex:i+1]intValue];
-            
-               [[[_arrayController arrangedObjects]objectAtIndex:d-1]setValue:date forKey:@"debpr"];
+            [form setDateFormat:@"dd/MM/yy"];
+
+               [[[_arrayController arrangedObjects]objectAtIndex:d-1]setValue:[form stringFromDate:date] forKey:@"debpr"];
             
             
         NSLog(@"Execution i %d",d);
@@ -275,14 +283,10 @@ NSInteger Row = [tableView selectedRow];
     
     int row = [tableView selectedRow];
     
-    NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
-    
-    dureeglobale= [durpr intValue]+2;
-    
-    selectiontache = YES;
-    gantt.needsDisplay = YES;
+    [self dessinergantt1:row];
     int j,k,l,r,s,t = 0,u,v = 0;
     
+ 
     
     for (j = 0; j < [array count]; j++) {
         k = [[array objectAtIndex:j]intValue];
@@ -345,9 +349,14 @@ NSInteger Row = [tableView selectedRow];
 }
 
 //Gantt avant liaison des tâches
--(void)dessinergantt1:(NSString *)designation{
+-(void)dessinergantt1:(int)row{
+    NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
+
     
-    
+    dureeglobale= [durpr intValue]+2;
+    selectiontache = YES;
+    gantt.needsDisplay = YES;
+
     
     
     
