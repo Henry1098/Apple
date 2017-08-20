@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class PredecesseurInsertion;
 
 @interface Pred : NSTableView
-
+{
+PredecesseurInsertion *predI;
+}
 @end

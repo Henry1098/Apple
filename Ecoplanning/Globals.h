@@ -32,5 +32,5 @@ typedef struct{
 extern BOOL liaisontaches;
 extern int dureeglobale;
 extern BOOL selectiontache;
-
+extern int tacheselectionne;
 @end

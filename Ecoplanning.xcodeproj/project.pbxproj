@@ -19,6 +19,10 @@
 		6B8798A21F1D1B4B0017E327 /* Lien.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8798A11F1D1B4B0017E327 /* Lien.xib */; };
 		6B938C951F483152008B61D4 /* Pred.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B938C941F483152008B61D4 /* Pred.m */; };
 		6B938C981F4836FB008B61D4 /* SuccesseurTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B938C971F4836FB008B61D4 /* SuccesseurTable.m */; };
+		6BAB77F91F48399E0026528C /* Predecesseurs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB77F81F48399E0026528C /* Predecesseurs.xib */; };
+		6BAB78021F483CA40026528C /* PredecesseurInsertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB78011F483CA40026528C /* PredecesseurInsertion.m */; };
+		6BAB78041F48414E0026528C /* SuccesseurInsertion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB78031F48414E0026528C /* SuccesseurInsertion.xib */; };
+		6BAB78071F4841A20026528C /* SuccesseurInsertion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB78061F4841A20026528C /* SuccesseurInsertion.m */; };
 		6BB5C5BF1F37F973007E9F75 /* NouveauProjet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BB5C5BE1F37F973007E9F75 /* NouveauProjet.xib */; };
 		6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5C11F37FA3D007E9F75 /* NouveauProjet.m */; };
 		6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BB5C5ED1F3824EB007E9F75 /* Predecesseur.m */; };
@@ -74,6 +78,12 @@
 		6B938C941F483152008B61D4 /* Pred.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pred.m; sourceTree = "<group>"; };
 		6B938C961F4836FB008B61D4 /* SuccesseurTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccesseurTable.h; sourceTree = "<group>"; };
 		6B938C971F4836FB008B61D4 /* SuccesseurTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccesseurTable.m; sourceTree = "<group>"; };
+		6BAB77F81F48399E0026528C /* Predecesseurs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Predecesseurs.xib; sourceTree = "<group>"; };
+		6BAB78001F483CA40026528C /* PredecesseurInsertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredecesseurInsertion.h; sourceTree = "<group>"; };
+		6BAB78011F483CA40026528C /* PredecesseurInsertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredecesseurInsertion.m; sourceTree = "<group>"; };
+		6BAB78031F48414E0026528C /* SuccesseurInsertion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccesseurInsertion.xib; sourceTree = "<group>"; };
+		6BAB78051F4841A20026528C /* SuccesseurInsertion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccesseurInsertion.h; sourceTree = "<group>"; };
+		6BAB78061F4841A20026528C /* SuccesseurInsertion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccesseurInsertion.m; sourceTree = "<group>"; };
 		6BB5C5BE1F37F973007E9F75 /* NouveauProjet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NouveauProjet.xib; sourceTree = "<group>"; };
 		6BB5C5C01F37FA3D007E9F75 /* NouveauProjet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NouveauProjet.h; sourceTree = "<group>"; };
 		6BB5C5C11F37FA3D007E9F75 /* NouveauProjet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NouveauProjet.m; sourceTree = "<group>"; };
@@ -145,7 +155,13 @@
 		6B66CFDA1F0D29310017B9B9 /* Ecoplanning */ = {
 			isa = PBXGroup;
 			children = (
+				6BAB78001F483CA40026528C /* PredecesseurInsertion.h */,
+				6BAB78011F483CA40026528C /* PredecesseurInsertion.m */,
 				6BB5C5BE1F37F973007E9F75 /* NouveauProjet.xib */,
+				6BAB77F81F48399E0026528C /* Predecesseurs.xib */,
+				6BAB78031F48414E0026528C /* SuccesseurInsertion.xib */,
+				6BAB78051F4841A20026528C /* SuccesseurInsertion.h */,
+				6BAB78061F4841A20026528C /* SuccesseurInsertion.m */,
 				6BBD4B1A1F28B59700B606C1 /* GestionDates.h */,
 				6BBD4B1B1F28B59700B606C1 /* GestionDates.mm */,
 				6B66CFDB1F0D29310017B9B9 /* AppDelegate.h */,
@@ -320,8 +336,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B66CFE51F0D29310017B9B9 /* Assets.xcassets in Resources */,
+				6BAB77F91F48399E0026528C /* Predecesseurs.xib in Resources */,
 				6BB5C5BF1F37F973007E9F75 /* NouveauProjet.xib in Resources */,
 				6B8798A21F1D1B4B0017E327 /* Lien.xib in Resources */,
+				6BAB78041F48414E0026528C /* SuccesseurInsertion.xib in Resources */,
 				6B66CFE81F0D29310017B9B9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,11 +377,13 @@
 				6B12FC911F44617000A2BA0F /* Gantt.m in Sources */,
 				6BB5C5EE1F3824EB007E9F75 /* Predecesseur.m in Sources */,
 				6B938C981F4836FB008B61D4 /* SuccesseurTable.m in Sources */,
+				6BAB78071F4841A20026528C /* SuccesseurInsertion.m in Sources */,
 				6B66CFE01F0D29310017B9B9 /* main.m in Sources */,
 				6B938C951F483152008B61D4 /* Pred.m in Sources */,
 				6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */,
 				6BBD4B1C1F28B59700B606C1 /* GestionDates.mm in Sources */,
 				6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */,
+				6BAB78021F483CA40026528C /* PredecesseurInsertion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

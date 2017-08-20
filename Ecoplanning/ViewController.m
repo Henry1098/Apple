@@ -30,6 +30,7 @@ Tache *tache; //pour inserer les taches
 BOOL liaison;
 Predecesseur *pred;
 Successeur *succ;
+int tacheselectionne;
 
 int dureeglobale;
 BOOL selectiontache;
@@ -62,7 +63,8 @@ BOOL selectiontache;
     touteslessucc = [NSMutableArray array];
     liaison = NO;
     pred = [[Predecesseur alloc]init];
-    succ = [[Successeur alloc]init];}
+    succ = [[Successeur alloc]init];
+}
 - (IBAction)chelien:(id)sender {
     
     [self executerLiens];
@@ -282,7 +284,7 @@ NSInteger Row = [tableView selectedRow];
     
     
     int row = [tableView selectedRow];
-    
+    tacheselectionne = row;
     [self dessinergantt1:row];
     int j,k,l,r,s,t = 0,u,v = 0;
     

@@ -8,6 +8,8 @@
 
 #import "Pred.h"
 #import "Globals.h"
+#import "PredecesseurInsertion.h"
+
 @implementation Pred
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -23,7 +25,12 @@
     if([event keyCode] == 0x22 && etatProjet == true)
     {
         NSLog(@"Hello world Predecesseur");
-        
+        if(!predI)
+        {
+            predI = [[PredecesseurInsertion alloc]initWithWindowNibName:@"Predecesseurs"];
+        }
+        [predI showWindow:self];
+       
     }
 }
 

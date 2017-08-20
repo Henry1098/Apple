@@ -8,7 +8,7 @@
 
 #import "SuccesseurTable.h"
 #import "Globals.h"
-
+#import "SuccesseurInsertion.h"
 @implementation SuccesseurTable
 
 - (void)drawRect:(NSRect)dirtyRect {
@@ -24,6 +24,12 @@
     if([event keyCode] == 0x22 && etatProjet == true)
     {
         NSLog(@"Hello world Successeur");
+        if(!succI)
+        {
+            succI = [[SuccesseurInsertion alloc]initWithWindowNibName:@"SuccesseurInsertion"];
+        }
+        [succI showWindow:self];
+
         
     }
 }

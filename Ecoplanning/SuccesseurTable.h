@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SuccesseurTable : NSTableView
+@class SuccesseurInsertion;
 
+@interface SuccesseurTable : NSTableView
+{
+SuccesseurInsertion *succI;
+}
 @end

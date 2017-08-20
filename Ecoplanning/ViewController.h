@@ -30,6 +30,8 @@
     
     __weak IBOutlet NSView *gantt;
     __weak IBOutlet NSTableView *predTable;
+    @public
+    
 }
 
 - (IBAction)bre:(id)sender;
