@@ -19,7 +19,9 @@
     NSString* debpr1;
     NSString* finpr1;
     NSString* mgt;
+    NSString* debcont;
+    NSString* fincont;
 }
 
-@property (copy) NSString* check,* numero,* designation,* durpr,* debpr,* finpr,* debpr1,* finpr1,* mgt;
+@property (copy) NSString* check,* numero,* designation,* durpr,* debpr,* finpr,* debpr1,* finpr1,* mgt, *debcont, *fincont;
 @end

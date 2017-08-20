@@ -49,6 +49,6 @@
 -(void)donneesgantt:(NSString *)designation:(int) decalage:(NSString *)lien;
 -(void)dessinergantt1:(int)row;
 -(void)dessinergantt2:(NSString *)designation:(int)decalage:(NSString *)lien;
-
+-(void)calculMarge;
 @end
 

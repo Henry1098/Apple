@@ -9,7 +9,7 @@
 #import "Tache.h"
 
 @implementation Tache
-@synthesize check, numero, designation, durpr, debpr,finpr, debpr1, finpr1,mgt;
+@synthesize check, numero, designation, durpr, debpr,finpr, debpr1, finpr1,mgt,debcont,fincont;
 
 
 -(id)init{
@@ -25,6 +25,8 @@
         debpr1 = @"";
         finpr1 = @"";
         mgt = @"";
+        debcont = @"";
+        fincont = @"";
     }
     
     return self;

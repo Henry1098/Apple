@@ -104,7 +104,8 @@ BOOL selectiontache;
         tache.debpr1 =datedebutProjet;
         tache.finpr1 =datefin;
         tache.mgt =@"0";
-        
+        tache.debcont = @"Hello";
+        tache.fincont =@"World";
         
     /*    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
@@ -129,14 +130,48 @@ BOOL selectiontache;
 }
 
 
+-(void)calculMarge
+{
+    int mgtmp =0;
+    int mgt_;
+    for (int i = 0; i < [tableView numberOfRows]; i++) {
+ NSString *mgt = [[[_arrayController arrangedObjects]objectAtIndex:i]valueForKey:@"mgt"];
+        
+        if(mgtmp < [mgt intValue])
+        {
+            mgtmp = [mgt intValue];
+        }
+        
+        for (int k = 0; k <[tableView numberOfRows]; k++) {
+
+            
+            NSString *duree = [[[_arrayController arrangedObjects]objectAtIndex:i]valueForKey:@"durpr"];
+            int duree_ = [duree intValue];
+          mgt_=mgtmp-duree_;
+            
+            [[[_arrayController arrangedObjects]objectAtIndex:k]setValue:[NSString stringWithFormat:@"%d",mgt_] forKey:@"mgt"];
+
+        }
+        
+        
+    }
+    
+}
+
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
     int row = [tableView selectedRow];
   
-   
+    NSString * str = [obj.object stringValue];
     
+    if([str length] > 3)
+    {
+        NSLog(@"Length is more than three");
+    }else{
     [self calculduree2:4:row];
+    [self calculMarge];
     [self dessinergantt1:row];
+    }
 }
 
 - (IBAction)bre:(id)sender {
