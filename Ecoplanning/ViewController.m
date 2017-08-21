@@ -163,10 +163,12 @@ BOOL selectiontache;
     int row = [tableView selectedRow];
   
     NSString * str = [obj.object stringValue];
-    
-    if([str length] > 3)
+    int nr = (int)[obj.object clickedColumn];
+
+              if([str length] > 3)
     {
-        NSLog(@"Length is more than three");
+        NSLog(@"%@", str);
+        NSLog(@"%@", [NSString stringWithFormat:@"%d",nr]);
     }else{
     [self calculduree2:4:row];
     [self calculMarge];
