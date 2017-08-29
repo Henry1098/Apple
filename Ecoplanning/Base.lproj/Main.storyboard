@@ -1640,7 +1640,7 @@
                         <string>debavtache</string>
                     </declaredKeys>
                     <connections>
-                        <binding destination="vZP-EK-9FC" name="contentArray" keyPath="selection.touteslessucc" id="tdh-a1-8Bg"/>
+                        <binding destination="FGY-qj-Kjs" name="contentArray" keyPath="touteslessucc" id="aAE-19-sL7"/>
                     </connections>
                 </arrayController>
             </objects>
