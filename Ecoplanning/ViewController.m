@@ -64,7 +64,17 @@ BOOL selectiontache;
     liaison = NO;
     pred = [[Predecesseur alloc]init];
     succ = [[Successeur alloc]init];
+    toutlesdurees = [NSMutableArray array];
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"durpr"]) {
+    //  code to be executed upon observing keypath
+        NSLog(@"%@", [object valueForKeyPath:keyPath]);
+    }
+}
+
 - (IBAction)chelien:(id)sender {
     
     [self executerLiens];
@@ -134,34 +144,34 @@ BOOL selectiontache;
 {
     int mgtmp =0;
     int mgt_;
-    for (int i = 0; i < [tableView numberOfRows]; i++) {
- NSString *mgt = [[[_arrayController arrangedObjects]objectAtIndex:i]valueForKey:@"mgt"];
-        
-        if(mgtmp < [mgt intValue])
-        {
-            mgtmp = [mgt intValue];
+    
+    
+    for (int i = 0; i < [toutlesdurees count]; i++) {
+       //
+        if ([[toutlesdurees objectAtIndex:i]intValue]>mgtmp) {
+            mgtmp=[[toutlesdurees objectAtIndex:i]intValue];
         }
-        
-        for (int k = 0; k <[tableView numberOfRows]; k++) {
-
-            
-            NSString *duree = [[[_arrayController arrangedObjects]objectAtIndex:i]valueForKey:@"durpr"];
-            int duree_ = [duree intValue];
-          mgt_=mgtmp-duree_;
-            
-            [[[_arrayController arrangedObjects]objectAtIndex:k]setValue:[NSString stringWithFormat:@"%d",mgt_] forKey:@"mgt"];
-
-        }
-        
-        
     }
+    
+    for (int k = 0; k < [tableView numberOfRows]; k++) {
+        
+    NSString *durpr= [[[_arrayController arrangedObjects]objectAtIndex:k]valueForKey:@"durpr"];
+      mgt_ = mgtmp-[durpr intValue];
+        
+        [[[_arrayController arrangedObjects]objectAtIndex:k]setValue:[NSString stringWithFormat:@"%d",mgt_] forKey:@"mgt"];
+    }
+    
+    
+    
+    
     
 }
 
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
     int row = [tableView selectedRow];
-  
+    
+    
     NSString * str = [obj.object stringValue];
     int nr = (int)[obj.object clickedColumn];
 
@@ -170,6 +180,7 @@ BOOL selectiontache;
         NSLog(@"%@", str);
         NSLog(@"%@", [NSString stringWithFormat:@"%d",nr]);
     }else{
+    [toutlesdurees addObject:str];
     [self calculduree2:4:row];
     [self calculMarge];
     [self dessinergantt1:row];
@@ -323,7 +334,14 @@ NSInteger Row = [tableView selectedRow];
     int row = [tableView selectedRow];
     tacheselectionne = row;
     [self dessinergantt1:row];
-    int j,k,l,r,s,t = 0,u,v = 0;
+    int j =0;
+    int k = 0;
+    int l = 0;
+    int r = 0;
+    int s = 0;
+    int t = 0;
+    int u =0;
+    int v = 0;
     
  
     
@@ -343,8 +361,11 @@ NSInteger Row = [tableView selectedRow];
             NSDate *now =[form dateFromString:@"12/01/17"];
            pred= [pred creerPredecesseur:now:p :array :o :durpr :@"0"];
           //  [touteslespred addObject:pred];
+            if([predArray doesContain:pred]){
+                
+            }else{
             [predArray addObject:pred];
-            [predTable reloadData];
+                [predTable reloadData];}
         }
     }
     
@@ -408,4 +429,6 @@ NSInteger Row = [tableView selectedRow];
 {
     
 }
+
+
 @end

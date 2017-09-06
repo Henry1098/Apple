@@ -27,7 +27,7 @@
     NSMutableArray *touteslestaches;
     NSMutableArray *touteslespred;
     NSMutableArray *touteslessucc;
-    
+    NSMutableArray *toutlesdurees;
     __weak IBOutlet NSView *gantt;
     __weak IBOutlet NSTableView *predTable;
     @public
