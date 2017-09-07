@@ -444,6 +444,7 @@ NSInteger Row = [tableView selectedRow];
              [touteslessucc addObject:succ];
             [SuccArray addObject:succ];
             [SuccTable reloadData];
+            NSLog(@"Successeur crée");
         }
 
     }

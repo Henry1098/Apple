@@ -1308,7 +1308,7 @@
                                             </tableHeaderView>
                                         </scrollView>
                                         <scrollView wantsLayer="YES" fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tv-KC-JnH">
-                                            <rect key="frame" x="613" y="361" width="597" height="135"/>
+                                            <rect key="frame" x="612" y="360" width="597" height="135"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <clipView key="contentView" ambiguous="YES" id="q69-oe-Waa">
                                                 <rect key="frame" x="1" y="0.0" width="595" height="134"/>
@@ -1350,7 +1350,7 @@
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <connections>
-                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.numero" id="vMV-9O-Dwe"/>
+                                                                    <binding destination="XVl-4G-pjI" name="value" keyPath="arrangedObjects.numero" id="WrD-oH-c25"/>
                                                                 </connections>
                                                             </tableColumn>
                                                             <tableColumn identifier="designation" width="73.5" minWidth="40" maxWidth="1000" id="DYA-lD-9oJ">
