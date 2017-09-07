@@ -17,6 +17,8 @@ class Dates
 public:
     time_t calculdates(time_t date, int jours);
     int retourweekday(time_t dates);
+    double differencedates(time_t date1,time_t date2);
+    time_t retirerdates(time_t date, int jours);
 };
 
 

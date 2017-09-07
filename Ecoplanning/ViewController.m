@@ -65,14 +65,8 @@ BOOL selectiontache;
     pred = [[Predecesseur alloc]init];
     succ = [[Successeur alloc]init];
     toutlesdurees = [NSMutableArray array];
-}
+    
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if ([keyPath isEqualToString:@"durpr"]) {
-    //  code to be executed upon observing keypath
-        NSLog(@"%@", [object valueForKeyPath:keyPath]);
-    }
 }
 
 - (IBAction)chelien:(id)sender {
@@ -114,8 +108,8 @@ BOOL selectiontache;
         tache.debpr1 =datedebutProjet;
         tache.finpr1 =datefin;
         tache.mgt =@"0";
-        tache.debcont = @"Hello";
-        tache.fincont =@"World";
+        tache.debcont = @"01/12/14";
+        tache.fincont =@"02/12/15con";
         
     /*    dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:NO], @"check",str,@"numero",str2,@"designation",@"1",@"durpr",datedebutProjet,@"debpr",datefin,@"finpr",datedebutProjet,@"debpr1",datefin,@"finpr1",@"0",@"mgt", nil];
 
@@ -166,19 +160,81 @@ BOOL selectiontache;
     
     
 }
-
+-(void)tableView:(NSTableView *)tableView didClickTableColumn:(nonnull NSTableColumn *)tableColumn{
+    
+    if([[tableColumn identifier]isEqualToString:@"debcont"] )
+    {
+        NSLog(@"debcont");
+    }
+}
 -(void)controlTextDidEndEditing:(NSNotification *)obj
 {
     int row = [tableView selectedRow];
     
     
     NSString * str = [obj.object stringValue];
-    int nr = (int)[obj.object clickedColumn];
-
-              if([str length] > 3)
+    NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
+    
+    int nr = (int)[obj.object editedColumn];
+   
+    if([str length] > 3)
     {
         NSLog(@"%@", str);
         NSLog(@"%@", [NSString stringWithFormat:@"%d",nr]);
+        [form setDateFormat:@"dd/MM/yy"];
+        if([form dateFromString:str])
+        {
+            if(nr ==9) // Debut contrainte
+            {
+                //Date au bon format
+                NSString *debpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"debpr"];
+                
+                double doe = [gestion diffdate:[form dateFromString:str] :[form dateFromString:debpr]];
+                
+                
+                [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:str forKey:@"debpr"];
+                
+                NSDate * fin;
+                NSDate * date = [form dateFromString:str];
+                int days = (int)doe;
+                fin = [gestion calcdates:date :days];
+                
+                [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:[form stringFromDate:fin] forKey:@"finpr"];
+                
+                NSLog(@"%f",doe);
+                
+                NSLog(@"%d Column modified",nr);
+                NSLog(@"YES");
+                NSLog(@"Column number 9");
+            }
+            if(nr == 10) //Fin contrainte
+            {
+                //Date au bon format
+                NSString *finpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"finpr"];
+                
+                NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
+                
+                
+                double doe = [gestion diffdate:[form dateFromString:str] :[form dateFromString:finpr]];
+                
+                
+                [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:str forKey:@"finpr"];
+                
+                NSDate * fin;
+                NSDate * date = [form dateFromString:str];
+                int days = [durpr intValue];
+                fin = [gestion retirerdates:date :days];
+                
+                [[[_arrayController arrangedObjects]objectAtIndex:row]setValue:[form stringFromDate:fin] forKey:@"debpr"];
+                
+                [tableView reloadData];
+                NSLog(@"Column number 10");
+            }
+          
+        }else{
+            // Date pas au bon format
+            return;
+        }
     }else{
     [toutlesdurees addObject:str];
     [self calculduree2:4:row];

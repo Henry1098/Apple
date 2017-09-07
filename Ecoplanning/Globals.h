@@ -33,4 +33,5 @@ extern BOOL liaisontaches;
 extern int dureeglobale;
 extern BOOL selectiontache;
 extern int tacheselectionne;
+extern int colonneselectionne;
 @end

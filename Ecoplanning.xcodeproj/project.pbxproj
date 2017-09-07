@@ -33,6 +33,7 @@
 		6BBD4B161F28982600B606C1 /* SeulementEntier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD4B151F28982600B606C1 /* SeulementEntier.m */; };
 		6BBD4B191F28AE1C00B606C1 /* Dates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD4B171F28AE1C00B606C1 /* Dates.cpp */; };
 		6BBD4B1C1F28B59700B606C1 /* GestionDates.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6BBD4B1B1F28B59700B606C1 /* GestionDates.mm */; };
+		6BC98D011F60887000A686EC /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC98D001F60887000A686EC /* Table.m */; };
 		6BEE20121F0F98E100A8E87E /* Globals.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BEE20111F0F98E100A8E87E /* Globals.m */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,8 @@
 		6BBD4B181F28AE1C00B606C1 /* Dates.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Dates.hpp; sourceTree = "<group>"; };
 		6BBD4B1A1F28B59700B606C1 /* GestionDates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GestionDates.h; path = ../GestionDates.h; sourceTree = "<group>"; };
 		6BBD4B1B1F28B59700B606C1 /* GestionDates.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GestionDates.mm; path = ../GestionDates.mm; sourceTree = "<group>"; };
+		6BC98CFF1F60887000A686EC /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		6BC98D001F60887000A686EC /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		6BEE20101F0F98E100A8E87E /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		6BEE20111F0F98E100A8E87E /* Globals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Globals.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +171,8 @@
 				6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */,
 				6B66CFE11F0D29310017B9B9 /* ViewController.h */,
 				6B66CFE21F0D29310017B9B9 /* ViewController.m */,
+				6BC98CFF1F60887000A686EC /* Table.h */,
+				6BC98D001F60887000A686EC /* Table.m */,
 				6B938C931F483152008B61D4 /* Pred.h */,
 				6B938C941F483152008B61D4 /* Pred.m */,
 				6B938C961F4836FB008B61D4 /* SuccesseurTable.h */,
@@ -383,6 +388,7 @@
 				6BB5C5C21F37FA3D007E9F75 /* NouveauProjet.m in Sources */,
 				6BBD4B1C1F28B59700B606C1 /* GestionDates.mm in Sources */,
 				6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */,
+				6BC98D011F60887000A686EC /* Table.m in Sources */,
 				6BAB78021F483CA40026528C /* PredecesseurInsertion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

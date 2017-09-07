@@ -30,8 +30,6 @@
     NSMutableArray *toutlesdurees;
     __weak IBOutlet NSView *gantt;
     __weak IBOutlet NSTableView *predTable;
-    @public
-    
 }
 
 - (IBAction)bre:(id)sender;
@@ -43,7 +41,7 @@
 @property (assign) IBOutlet NSArrayController *arrayController;
 - (IBAction)foot:(id)sender;
 -(void) executerLiens;
-- (void)calculduree;
+-(void)calculduree;
 -(void)lierVersionUnPred;
 -(void)lierVersionUnSucc;
 -(void)donneesgantt:(NSString *)designation:(int) decalage:(NSString *)lien;

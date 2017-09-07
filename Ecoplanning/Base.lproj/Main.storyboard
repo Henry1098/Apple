@@ -1040,7 +1040,6 @@
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </tableHeaderCell>
                                                                 <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="yDu-0j-p0I">
-                                                                    <dateFormatter key="formatter" dateStyle="short" timeStyle="short" id="VvE-xi-0Qd"/>
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1050,14 +1049,13 @@
                                                                     <binding destination="Aih-eI-Ce1" name="value" keyPath="arrangedObjects.debcont" id="79q-my-f6t"/>
                                                                 </connections>
                                                             </tableColumn>
-                                                            <tableColumn identifier="" width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="jde-Ob-GuZ">
+                                                            <tableColumn identifier="fincont" width="64" minWidth="10" maxWidth="3.4028234663852886e+38" id="jde-Ob-GuZ">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Fin Cont">
                                                                     <font key="font" metaFont="smallSystem"/>
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </tableHeaderCell>
                                                                 <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="S6L-pe-qg3">
-                                                                    <dateFormatter key="formatter" dateStyle="short" id="Dch-Kl-6ZY"/>
                                                                     <font key="font" metaFont="system"/>
                                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
