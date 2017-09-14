@@ -37,6 +37,7 @@ int dureeglobale;
 BOOL selectiontache;
 Journeedelasemaine jdls;
 GlobalFunctions *globs;
+NSMutableArray* datessel;
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -68,6 +69,8 @@ GlobalFunctions *globs;
     succ = [[Successeur alloc]init];
     toutlesdurees = [NSMutableArray array];
     globs = [[GlobalFunctions alloc]init];
+    datessel = [NSMutableArray array];
+    datesarrange= [NSMutableArray array];
 }
 
 - (IBAction)chelien:(id)sender {
@@ -475,9 +478,17 @@ NSInteger Row = [tableView selectedRow];
     NSInteger day = [comps day];
     NSInteger month = [comps month];
     NSInteger year = [comps year];
+    NSDate *temp= debprdate;
     
-    for (int i = 0; i < dureeglobale; i++) {
-        
+    dureeglobale= [durpr intValue]+2;
+    int nduree = dureeglobale;
+    for (int i = 0; i < nduree; i++) {
+        comp.day = 1;
+        [form setDateFormat:@"dd/MM/yy"];
+        temp = [cal dateByAddingComponents:comp toDate:temp options:0];
+        NSString *tempd = [form stringFromDate:temp];
+        [datesarrange addObject:tempd];
+        NSLog(@"%@",tempd);
     }
     
    BOOL bissextile =[globs anneebissextile:year];
@@ -488,7 +499,23 @@ NSInteger Row = [tableView selectedRow];
     }else{
         NSLog(@"Annee non bissextile");
     }
-    dureeglobale= [durpr intValue]+2;
+    
+    
+    
+    datessel = [datesarrange sortedArrayUsingComparator: ^(id obj1, id obj2) {
+        
+        if ([obj1 integerValue] > [obj2 integerValue]) {
+            
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        
+        if ([obj1 integerValue] < [obj2 integerValue]) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    
+    
     selectiontache = YES;
     gantt.needsDisplay = YES;
     NSLog(@"%ld Day and %ld ",(long)day, (long)month);
@@ -504,6 +531,5 @@ NSInteger Row = [tableView selectedRow];
 {
     
 }
-
 
 @end

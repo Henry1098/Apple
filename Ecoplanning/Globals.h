@@ -46,4 +46,5 @@ extern int tacheselectionne;
 extern int colonneselectionne;
 extern int annee_;
 extern NSMutableArray *Mois;
+extern NSMutableArray *datessel;
 @end

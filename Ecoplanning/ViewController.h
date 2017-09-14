@@ -30,6 +30,7 @@
     NSMutableArray *toutlesdurees;
     __weak IBOutlet NSView *gantt;
     __weak IBOutlet NSTableView *predTable;
+    NSMutableArray *datesarrange;
 }
 
 - (IBAction)bre:(id)sender;
