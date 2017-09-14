@@ -30,6 +30,9 @@ int annee_;
     
     dateD.stringValue = strDate;
     [self setDateFin];
+    
+    [format setDateFormat:@"dd/MM/yyyy"];
+
     annee_ = [self setAnnee:[format dateFromString:strDate]];
 }
 - (IBAction)sauver:(id)sender {

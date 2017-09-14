@@ -18,20 +18,6 @@ typedef struct{
     BOOL DD;
 } LienTache;
 
-typedef struct{
-    int janvier;
-    int fevrier;
-    int mars;
-    int avril;
-    int mai;
-    int juin;
-    int juillet;
-    int aout;
-    int septembre;
-    int octobre;
-    int novembre;
-    int decembre
-}Mois;
 
 typedef struct{
     int lundi;
@@ -59,4 +45,5 @@ extern BOOL selectiontache;
 extern int tacheselectionne;
 extern int colonneselectionne;
 extern int annee_;
+extern NSMutableArray *Mois;
 @end

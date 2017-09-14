@@ -14,6 +14,7 @@
 #import "Successeur.h"
 #import "Tache.h"
 #import "Gantt.h"
+#import "GlobalFunctions.h"
 
 @implementation ViewController
 int nbreTaches;
@@ -35,6 +36,7 @@ int tacheselectionne;
 int dureeglobale;
 BOOL selectiontache;
 Journeedelasemaine jdls;
+GlobalFunctions *globs;
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -65,6 +67,7 @@ Journeedelasemaine jdls;
     pred = [[Predecesseur alloc]init];
     succ = [[Successeur alloc]init];
     toutlesdurees = [NSMutableArray array];
+    globs = [[GlobalFunctions alloc]init];
 }
 
 - (IBAction)chelien:(id)sender {
@@ -473,6 +476,18 @@ NSInteger Row = [tableView selectedRow];
     NSInteger month = [comps month];
     NSInteger year = [comps year];
     
+    for (int i = 0; i < dureeglobale; i++) {
+        
+    }
+    
+   BOOL bissextile =[globs anneebissextile:year];
+    
+    if(bissextile == YES)
+    {
+        NSLog(@"Annee bissextile");
+    }else{
+        NSLog(@"Annee non bissextile");
+    }
     dureeglobale= [durpr intValue]+2;
     selectiontache = YES;
     gantt.needsDisplay = YES;
