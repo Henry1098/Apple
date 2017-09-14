@@ -34,7 +34,7 @@ int tacheselectionne;
 
 int dureeglobale;
 BOOL selectiontache;
-
+Journeedelasemaine jdls;
 - (void)viewDidLoad {
     [super viewDidLoad];
 /*  dict = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:false], @"check",@"1",@"numero",@"Tâche 1",@"designation",@"1",@"durpr",@"11/07/17",@"debpr",@"12/07/17",@"finpr",@"11/07/17",@"debpr1",@"12/07/17",@"finpr2",@"0",@"mgt", nil];
@@ -65,8 +65,6 @@ BOOL selectiontache;
     pred = [[Predecesseur alloc]init];
     succ = [[Successeur alloc]init];
     toutlesdurees = [NSMutableArray array];
-    
-
 }
 
 - (IBAction)chelien:(id)sender {
@@ -468,12 +466,17 @@ NSInteger Row = [tableView selectedRow];
 //Gantt avant liaison des tâches
 -(void)dessinergantt1:(int)row{
     NSString *durpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"durpr"];
-
+ NSString *debpr = [[[_arrayController arrangedObjects]objectAtIndex:row]valueForKey:@"debpr"];
+    NSDate *debprdate = [form dateFromString:debpr];
+    NSDateComponents * comps = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth fromDate:debprdate];
+    NSInteger day = [comps day];
+    NSInteger month = [comps month];
+    NSInteger year = [comps year];
     
     dureeglobale= [durpr intValue]+2;
     selectiontache = YES;
     gantt.needsDisplay = YES;
-
+    NSLog(@"%ld Day and %ld ",(long)day, (long)month);
     
     
     

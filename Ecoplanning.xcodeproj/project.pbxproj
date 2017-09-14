@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B12FC911F44617000A2BA0F /* Gantt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B12FC901F44617000A2BA0F /* Gantt.m */; };
+		6B259FE31F6A4D0500F042EA /* GlobalFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B259FE21F6A4D0500F042EA /* GlobalFunctions.m */; };
 		6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */; };
 		6B66CFE01F0D29310017B9B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFDF1F0D29310017B9B9 /* main.m */; };
 		6B66CFE31F0D29310017B9B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B66CFE21F0D29310017B9B9 /* ViewController.m */; };
@@ -57,6 +58,8 @@
 /* Begin PBXFileReference section */
 		6B12FC8F1F44617000A2BA0F /* Gantt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gantt.h; sourceTree = "<group>"; };
 		6B12FC901F44617000A2BA0F /* Gantt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gantt.m; sourceTree = "<group>"; };
+		6B259FE11F6A4D0500F042EA /* GlobalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFunctions.h; sourceTree = "<group>"; };
+		6B259FE21F6A4D0500F042EA /* GlobalFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalFunctions.m; sourceTree = "<group>"; };
 		6B66CFD81F0D29310017B9B9 /* Ecoplanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ecoplanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B66CFDB1F0D29310017B9B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B66CFDC1F0D29310017B9B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				6BBD4B141F28982600B606C1 /* SeulementEntier.h */,
 				6BBD4B151F28982600B606C1 /* SeulementEntier.m */,
 				6BEE20101F0F98E100A8E87E /* Globals.h */,
+				6B259FE11F6A4D0500F042EA /* GlobalFunctions.h */,
+				6B259FE21F6A4D0500F042EA /* GlobalFunctions.m */,
 				6B66CFE91F0D29310017B9B9 /* Info.plist */,
 				6BEE20111F0F98E100A8E87E /* Globals.m */,
 				6B66CFDE1F0D29310017B9B9 /* Supporting Files */,
@@ -390,6 +395,7 @@
 				6B66CFDD1F0D29310017B9B9 /* AppDelegate.m in Sources */,
 				6BC98D011F60887000A686EC /* Table.m in Sources */,
 				6BAB78021F483CA40026528C /* PredecesseurInsertion.m in Sources */,
+				6B259FE31F6A4D0500F042EA /* GlobalFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

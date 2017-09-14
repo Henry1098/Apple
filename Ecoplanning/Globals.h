@@ -18,6 +18,30 @@ typedef struct{
     BOOL DD;
 } LienTache;
 
+typedef struct{
+    int janvier;
+    int fevrier;
+    int mars;
+    int avril;
+    int mai;
+    int juin;
+    int juillet;
+    int aout;
+    int septembre;
+    int octobre;
+    int novembre;
+    int decembre
+}Mois;
+
+typedef struct{
+    int lundi;
+    int mardi;
+    int mercredi;
+    int jeudi;
+    int vendredi;
+    int samedi;
+    int dimanche;
+}Journeedelasemaine;
 
     extern NSDate *datedebutProjet;
     extern NSDate *datefin;
@@ -34,4 +58,5 @@ extern int dureeglobale;
 extern BOOL selectiontache;
 extern int tacheselectionne;
 extern int colonneselectionne;
+extern int annee_;
 @end

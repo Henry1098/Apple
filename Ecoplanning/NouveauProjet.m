@@ -11,7 +11,7 @@
 @interface NouveauProjet ()
 
 @end
-
+int annee_;
 @implementation NouveauProjet
 - (void)windowDidLoad {
     [super windowDidLoad];
@@ -30,6 +30,7 @@
     
     dateD.stringValue = strDate;
     [self setDateFin];
+    annee_ = [self setAnnee:[format dateFromString:strDate]];
 }
 - (IBAction)sauver:(id)sender {
     
@@ -51,7 +52,13 @@
 }
 
 
+-(int)setAnnee:(NSDate *)date
+{
+    NSDateComponents * comps = [[NSCalendar currentCalendar] components:NSCalendarUnitDay|NSCalendarUnitMonth fromDate:date];
+     int year = (int)[comps year];
+    return year;
 
+}
 
 
 @end
